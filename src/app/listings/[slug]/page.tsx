@@ -152,23 +152,6 @@ export default async function ListingPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Features */}
-              <div className="mb-12">
-                <h2 className="text-xl font-semibold text-[var(--charcoal)] mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
-                  Property Features
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {listing.features.map((feature, index) => (
-                    <div key={index} className="flex items-center">
-                      <svg className="w-5 h-5 text-[var(--gold)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[var(--muted)]">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* Video Section (if available) */}
               {listing.videoUrl && (
                 <div className="mb-12">
