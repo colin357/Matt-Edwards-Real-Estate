@@ -76,7 +76,7 @@ images: [
   'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/ibg7agcxrzkgscqjfilj'
     ],
     status: 'available',
-    propertyType: 'Fisher Island',
+    propertyType: 'single-family',
     yearBuilt: 2026,
     lotSize: '0.54 acres',
     featured: true,
