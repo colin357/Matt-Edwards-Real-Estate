@@ -12,7 +12,6 @@ export interface Listing {
   sqftFormatted: string;
   description: string;
   shortDescription: string;
-  features: string[];
   images: string[];
   videoUrl?: string;
   status: 'available' | 'pending' | 'sold';
@@ -101,18 +100,6 @@ The residence features a grand open floor plan with 12-foot ceilings, creating a
 The custom Italian kitchen features Miele appliances, marble countertops, and a butler's pantry. The primary suite is a private retreat with a sitting area, dual walk-in closets, and a spa bathroom with soaking tub overlooking the bay.
 
 Building amenities include a rooftop pool, full-service spa, state-of-the-art fitness center, residents' lounge, and 24-hour concierge service.`,
-    features: [
-      '360-degree views',
-      'Full-floor residence',
-      'Private elevator',
-      'Multiple terraces',
-      'Custom Italian kitchen',
-      'Primary suite with bay views',
-      'Building spa & fitness center',
-      '24-hour concierge',
-      'Valet parking',
-      '2 dedicated parking spaces'
-    ],
     images: [
       'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200',
       'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200',
@@ -143,18 +130,6 @@ Original features including hand-painted ceiling murals, intricate ironwork, and
 The grounds feature mature tropical landscaping, a resort-style pool with cabana, outdoor kitchen, and tennis court. The property offers exceptional privacy while being moments from the shops and restaurants of Miracle Mile.
 
 A true entertainer's dream, the home includes a formal living room, dining room, library, family room, and a spectacular great room that opens to the pool terrace.`,
-    features: [
-      'Historic Mediterranean architecture',
-      '1-acre gated lot',
-      'Pool with cabana',
-      'Tennis court',
-      'Outdoor kitchen',
-      'Library & study',
-      'Wine cellar',
-      'Guest house',
-      'Mature tropical landscaping',
-      '3-car garage'
-    ],
     images: [
       'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200',
       'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200',
@@ -186,18 +161,6 @@ Located on prestigious Pine Tree Drive, the home offers waterfront views with a 
 The open floor plan is ideal for entertaining, with the living spaces flowing to an expansive pool deck overlooking the water. The chef's kitchen features custom cabinetry and professional-grade appliances.
 
 The primary suite occupies the entire second floor, offering water views, a sitting area, and a luxurious bathroom. Four additional bedroom suites provide comfort for family and guests.`,
-    features: [
-      'Restored Art Deco architecture',
-      'Waterfront with private dock',
-      'Pool overlooking water',
-      'Original terrazzo floors',
-      'Chef\'s kitchen',
-      'Primary suite floor',
-      'Impact windows throughout',
-      'New roof & systems',
-      'Lush landscaping',
-      '2-car garage'
-    ],
     images: [
       'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200',
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200',
@@ -229,18 +192,6 @@ Natural materials including ipe wood, coral stone, and floor-to-ceiling windows 
 The grounds feature a heated infinity pool, summer kitchen, and lush tropical gardens designed for privacy. A separate guest suite with its own entrance provides flexibility for extended family or visitors.
 
 Located in the heart of Coconut Grove, the home is walking distance to boutiques, galleries, cafes, and the waterfront parks that define this beloved neighborhood.`,
-    features: [
-      'Contemporary architecture',
-      '20-foot ceilings',
-      'Walls of glass',
-      'Infinity pool',
-      'Summer kitchen',
-      'Private guest suite',
-      'Smart home technology',
-      'Tropical gardens',
-      'Walking distance to village',
-      'Gated entry'
-    ],
     images: [
       'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200',
       'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200',
@@ -272,18 +223,6 @@ Recently renovated to the highest standards, the residence features an open floo
 The expansive primary suite includes a sitting area, dual walk-in closets, and a spa-like bathroom with ocean views. Four additional bedroom suites offer comfort and privacy for family and guests.
 
 Fisher Island offers unparalleled amenities including a private beach club, world-class golf course, deep-water marina, tennis center, spa, and multiple dining venues.`,
-    features: [
-      'Fisher Island exclusivity',
-      'Direct ocean views',
-      'Recently renovated',
-      'Gaggenau appliances',
-      'Private beach club access',
-      'Golf & tennis',
-      'Deep-water marina',
-      'Full-service spa',
-      '24-hour security',
-      'Multiple parking spaces'
-    ],
     images: [
       'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200',
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200',
