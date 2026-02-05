@@ -12,13 +12,32 @@ export interface Listing {
   sqftFormatted: string;
   description: string;
   shortDescription: string;
-  images: string[];
+  // Number of photos in /public/listings/{slug}/ folder (named 01.jpg, 02.jpg, etc.)
+  imageCount: number;
   videoUrl?: string;
   status: 'available' | 'pending' | 'sold';
   propertyType: 'single-family' | 'condo' | 'penthouse' | 'waterfront' | 'estate';
   yearBuilt?: number;
   lotSize?: string;
   featured: boolean;
+}
+
+/**
+ * Generates image paths for a listing based on the imageCount.
+ * Photos should be stored in /public/listings/{slug}/ as 01.jpg, 02.jpg, etc.
+ *
+ * To add photos to a listing:
+ * 1. Add your photos to /public/listings/{slug}/
+ * 2. Name them sequentially: 01.jpg, 02.jpg, 03.jpg, etc.
+ * 3. Update the imageCount in the listing data
+ */
+export function getListingImages(listing: Listing): string[] {
+  const images: string[] = [];
+  for (let i = 1; i <= listing.imageCount; i++) {
+    const num = i.toString().padStart(2, '0');
+    images.push(`/listings/${listing.slug}/${num}.jpg`);
+  }
+  return images;
 }
 
 // Sample listings - replace with real data or CMS integration
@@ -37,41 +56,7 @@ export const listings: Listing[] = [
     sqftFormatted: '15,801',
     shortDescription: 'THE GRANDE DAME OF FISHER ISLAND... THE MEGA MANSION No.7 SITS ON OVER HALF ACRE OF LUSH GARDENS & WATER FEATURES WITH STUNNING DIRECT BAY & GOLF COURSE VIEWS!',
     description: `THE GRANDE DAME OF FISHER ISLAND... THE MEGA MANSION No.7 SITS ON OVER HALF ACRE OF LUSH GARDENS & WATER FEATURES WITH STUNNING DIRECT BAY & GOLF COURSE VIEWS! This Modern Tuscan Mansion features over 15,800 SF of Interior Living Space + Massive Outdoor Spaces for Entertaining. The Largest & Most Opulent Mansion on Fisher Island features 8 Bedrooms + 10 Bathrooms + 2 Powder Rooms. European White Premium select Oak Flooring & Italian Stone throughout--Italian Kitchen equipped with top-of-the-line Wolf & Sub-Zero Appliances. Expansive Master Suite with His & Hers Baths features Dornbracht Fixtures + Huge Dressing Rooms. Infinity Edge Pool & Spa. Rooftop with Wellness areas + Yoga Meditation Deck with 360-degree views. Architecture by Portuondo Perotti Architects. 4 Car Garage + Large Driveway.`,
-images: [
-  'https://media-production.lp-cdn.com/media/2409edd5-dbd5-4550-a8fa-e982f01cd44b',
-  'https://media-production.lp-cdn.com/media/7c86b554-1f13-48f3-8395-1e07b610c934',
-  'https://media-production.lp-cdn.com/media/22b77447-45fd-49f3-8982-5b91301988e9',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/30973865-4ffd-4fdc-a8a8-820cdae5cf34',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/1804a205-fb83-4623-8cf3-4a44b1d94bd2',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/799fa9ba-3944-4a86-9227-3ddc36f1dd3c',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/efc78ca0-4f97-4222-8cad-10aa1262fa26',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/f18d1d49-8204-4940-a84b-9affe08e0fd4',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/e38cf821-8247-47bc-8a39-e39f0e6f4f32',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/aefd86ea-002f-4b6f-bf65-55b415e8182d',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/cce42fb0-290e-4398-8701-16cd2faeeba2',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/dff5dec2-99bc-435d-bd12-c4823d832fa3',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/549ac861-5abe-4f9c-86aa-749bb025c85c',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/d047fb66-93a4-4908-9fc8-7916931cde4e',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/92e6cec2-76f1-4b0c-959a-a5ffe3f6f21a',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/e3abd68d-7f86-4244-bcd3-4894bd43423a',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/dcc50323-9da5-4830-b36c-96705bc31c81',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85/https://media-production.lp-cdn.com/media/583e4f35-ce85-40dc-a236-5c5bf24e0a34',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/b7ae0e7d-2b56-4f32-8897-36de43969697',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/d5fc6444-216d-42a3-92a5-709e151844de',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/211e24f0-cf1e-45f2-9bce-0f465cbb60e0',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/626e101e-9cfa-4809-8694-42c07968d70d',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85/https://media-production.lp-cdn.com/media/fb0c1d12-efb3-49ac-ae99-39b9b7525532',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/79d27cd6-abd0-4c63-b4cc-5989507a777a',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/0200861e-d3b2-49e7-ac3a-7e02506cfe20',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/a5eb70e7-174b-4468-bd2f-0c01de66032c',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/bfcace94-fd04-4283-83c8-c4ec55b37986',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/975b58b7-89bd-4e17-bfae-4a5ed8e8a42d',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/517067a2-ce6f-4579-b18f-e3b0b036b0d2',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/c715aadc-fd23-41a5-8300-817a758eb7e5',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/a120ad32-292c-49f7-b575-c56924ab4684',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1920/https://media-production.lp-cdn.com/media/562baf26-cddb-4f07-908b-0c5393748d3c',
-  'https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/ibg7agcxrzkgscqjfilj'
-    ],
+    imageCount: 0, // Add photos to /public/listings/fisher-island-mansion-7/
     status: 'available',
     propertyType: 'single-family',
     yearBuilt: 2026,
@@ -98,11 +83,7 @@ The residence features a grand open floor plan with 12-foot ceilings, creating a
 The custom Italian kitchen features Miele appliances, marble countertops, and a butler's pantry. The primary suite is a private retreat with a sitting area, dual walk-in closets, and a spa bathroom with soaking tub overlooking the bay.
 
 Building amenities include a rooftop pool, full-service spa, state-of-the-art fitness center, residents' lounge, and 24-hour concierge service.`,
-    images: [
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200',
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200',
-    ],
+    imageCount: 0, // Add photos to /public/listings/penthouse-brickell-skyline/
     status: 'available',
     propertyType: 'penthouse',
     yearBuilt: 2019,
@@ -128,11 +109,7 @@ Original features including hand-painted ceiling murals, intricate ironwork, and
 The grounds feature mature tropical landscaping, a resort-style pool with cabana, outdoor kitchen, and tennis court. The property offers exceptional privacy while being moments from the shops and restaurants of Miracle Mile.
 
 A true entertainer's dream, the home includes a formal living room, dining room, library, family room, and a spectacular great room that opens to the pool terrace.`,
-    images: [
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200',
-      'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200',
-    ],
+    imageCount: 0, // Add photos to /public/listings/coral-gables-mediterranean-estate/
     status: 'available',
     propertyType: 'estate',
     yearBuilt: 1928,
@@ -159,11 +136,7 @@ Located on prestigious Pine Tree Drive, the home offers waterfront views with a 
 The open floor plan is ideal for entertaining, with the living spaces flowing to an expansive pool deck overlooking the water. The chef's kitchen features custom cabinetry and professional-grade appliances.
 
 The primary suite occupies the entire second floor, offering water views, a sitting area, and a luxurious bathroom. Four additional bedroom suites provide comfort for family and guests.`,
-    images: [
-      'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200',
-      'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200',
-    ],
+    imageCount: 0, // Add photos to /public/listings/miami-beach-art-deco-villa/
     status: 'available',
     propertyType: 'waterfront',
     yearBuilt: 1935,
@@ -190,11 +163,7 @@ Natural materials including ipe wood, coral stone, and floor-to-ceiling windows 
 The grounds feature a heated infinity pool, summer kitchen, and lush tropical gardens designed for privacy. A separate guest suite with its own entrance provides flexibility for extended family or visitors.
 
 Located in the heart of Coconut Grove, the home is walking distance to boutiques, galleries, cafes, and the waterfront parks that define this beloved neighborhood.`,
-    images: [
-      'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200',
-      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200',
-    ],
+    imageCount: 0, // Add photos to /public/listings/coconut-grove-modern-retreat/
     status: 'available',
     propertyType: 'single-family',
     yearBuilt: 2021,
@@ -221,11 +190,7 @@ Recently renovated to the highest standards, the residence features an open floo
 The expansive primary suite includes a sitting area, dual walk-in closets, and a spa-like bathroom with ocean views. Four additional bedroom suites offer comfort and privacy for family and guests.
 
 Fisher Island offers unparalleled amenities including a private beach club, world-class golf course, deep-water marina, tennis center, spa, and multiple dining venues.`,
-    images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200',
-    ],
+    imageCount: 0, // Add photos to /public/listings/fisher-island-waterfront-condo/
     status: 'available',
     propertyType: 'condo',
     yearBuilt: 2015,
