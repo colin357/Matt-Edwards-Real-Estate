@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getListingBySlug, getAllListings, getListingImages } from "@/data/listings";
 import ImageGallery from "@/components/ImageGallery";
+import PhotoGrid from "@/components/PhotoGrid";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -276,6 +277,23 @@ export default async function ListingPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* All Property Photos */}
+      {hasImages && (
+        <section className="py-16 bg-[var(--cream)]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl font-semibold text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>
+                Property Gallery
+              </h2>
+              <p className="text-sm text-[var(--muted)]">
+                {images.length} Photos
+              </p>
+            </div>
+            <PhotoGrid images={images} title={listing.title} />
+          </div>
+        </section>
+      )}
 
       {/* Back to Listings */}
       <section className="py-12 bg-[var(--cream)]">
