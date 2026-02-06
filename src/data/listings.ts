@@ -109,7 +109,7 @@ The primary suite is a private retreat with panoramic sunset views, two dressing
 The home offers a grand layout with multiple living spaces, elevator access, and opportunities to tailor interior finishes and exterior landscaping to suit exact lifestyle preferences. Additional features include a pool, ample parking, and proximity to the island’s private club, golf course, marina, and beach amenities.
 
 This offering represents one of the last available estate sites on Fisher Island and invites a purchaser to realize a world-class architectural vision in a setting defined by exclusivity and luxury.`,
-  imageCount: 0,
+  imageCount: 19,
   status: 'available',
   propertyType: 'single-family',
   yearBuilt: 2006,
