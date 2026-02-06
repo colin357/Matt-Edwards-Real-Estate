@@ -189,23 +189,16 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Video Placeholder */}
+            {/* YouTube Video */}
             <div className="relative">
               <div className="relative h-[400px] lg:h-[500px] bg-gray-800 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"
-                  alt="Property video production"
-                  fill
-                  className="object-cover opacity-80"
+                <iframe
+                  src="https://www.youtube.com/embed/CuiIn449ypA?rel=0"
+                  title="Matt Edwards - Luxury Real Estate Marketing"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
                 />
-                {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="w-20 h-20 bg-[var(--gold)] rounded-full flex items-center justify-center hover:bg-[var(--gold-light)] transition-colors">
-                    <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </button>
-                </div>
               </div>
             </div>
           </div>
