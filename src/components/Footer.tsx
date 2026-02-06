@@ -53,13 +53,13 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>Miami, Florida</li>
               <li>
-                <a href="mailto:matt@mattedwards.com" className="hover:text-white transition-colors">
-                  matt@mattedwards.com
+                <a href="mailto:matt@luxelivingmiami.com" className="hover:text-white transition-colors">
+                  matt@luxelivingmiami.com
                 </a>
               </li>
               <li>
-                <a href="tel:+13055551234" className="hover:text-white transition-colors">
-                  (305) 555-1234
+                <a href="tel:+12148860363" className="hover:text-white transition-colors">
+                  (214) 886-0363
                 </a>
               </li>
             </ul>

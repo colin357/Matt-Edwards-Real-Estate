@@ -191,7 +191,7 @@ export default function Home() {
 
             {/* YouTube Video */}
             <div className="relative">
-              <div className="relative h-[400px] lg:h-[500px] bg-gray-800 overflow-hidden">
+              <div className="relative aspect-video bg-gray-800 overflow-hidden">
                 <iframe
                   src="https://www.youtube.com/embed/CuiIn449ypA?rel=0"
                   title="Matt Edwards - Luxury Real Estate Marketing"
@@ -271,8 +271,8 @@ export default function Home() {
                   </div>
                   <div className="ml-4">
                     <p className="text-sm text-[var(--muted)] uppercase tracking-wide">Phone</p>
-                    <a href="tel:+13055551234" className="text-[var(--charcoal)] font-medium hover:text-[var(--gold)] transition-colors">
-                      (305) 555-1234
+                    <a href="tel:+12148860363" className="text-[var(--charcoal)] font-medium hover:text-[var(--gold)] transition-colors">
+                      (214) 886-0363
                     </a>
                   </div>
                 </div>
@@ -285,8 +285,8 @@ export default function Home() {
                   </div>
                   <div className="ml-4">
                     <p className="text-sm text-[var(--muted)] uppercase tracking-wide">Email</p>
-                    <a href="mailto:matt@mattedwards.com" className="text-[var(--charcoal)] font-medium hover:text-[var(--gold)] transition-colors">
-                      matt@mattedwards.com
+                    <a href="mailto:matt@luxelivingmiami.com" className="text-[var(--charcoal)] font-medium hover:text-[var(--gold)] transition-colors">
+                      matt@luxelivingmiami.com
                     </a>
                   </div>
                 </div>
