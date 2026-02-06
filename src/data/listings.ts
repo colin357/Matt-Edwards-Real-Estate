@@ -280,7 +280,7 @@ Outdoor amenities include an expansive pool deck, lush landscaping, and a deep-w
 The gourmet kitchen is equipped with high-end appliances and custom cabinetry. Multiple ensuite bedrooms include a luxurious primary suite with private water-facing terrace. Outdoor amenities include a pool, expansive terraces, lush landscaping, and a private dock with deep water access.
 
 Ownership includes convenient proximity to Miami Beach and Key Biscayne, offering the best of city, bay, and island living.`,
-  imageCount: 0,
+  imageCount: 71,
   status: 'available',
   propertyType: 'single-family',
   yearBuilt: 1994,
