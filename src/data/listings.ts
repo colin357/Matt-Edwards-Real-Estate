@@ -67,86 +67,80 @@ export const listings: Listing[] = [
     lotSize: '0.54 acres',
     featured: true,
   },
-  {
-    id: '2',
-    slug: 'penthouse-brickell-skyline',
-    title: 'Brickell Skyline Penthouse',
-    address: '1000 Brickell Avenue, PH1',
-    neighborhood: 'Brickell',
-    price: 8900000,
-    priceFormatted: '$8,900,000',
-    bedrooms: 4,
-    bathrooms: 5,
-    sqft: 5200,
-    sqftFormatted: '5,200',
-    shortDescription: 'Stunning full-floor penthouse with 360-degree views of Miami skyline and Biscayne Bay.',
-    description: `Perched atop one of Brickell's most prestigious towers, this full-floor penthouse offers an extraordinary living experience with 360-degree views encompassing the Miami skyline, Biscayne Bay, and the Atlantic Ocean.
+{
+  id: '2',
+  slug: '126-w-san-marino-dr-miami-beach',
+  title: '126 W San Marino Drive',
+  address: '126 W San Marino Dr, Miami Beach, FL 33139',
+  neighborhood: 'Venetian Islands',
+  price: 37000000,
+  priceFormatted: '$37,000,000',
+  bedrooms: 5,
+  bathrooms: 7.5,
+  sqft: 7890,
+  sqftFormatted: '7,890',
+  shortDescription: 'Rare modern waterfront estate on Venetian Islands with skyline and bay views.',
+  description: `Located on the coveted south side of San Marino Island, this waterfront estate offers expansive views of Biscayne Bay and the Miami skyline. Situated on a lot and a half with 90 feet of water frontage and a multi-vessel dock with lift and jet ski platforms, the residence blends modern design with tropical appeal. 
 
-The residence features a grand open floor plan with 12-foot ceilings, creating an atmosphere of light and space. The living areas flow seamlessly to multiple terraces, perfect for entertaining or enjoying Miami's spectacular sunsets.
+The open floor plan is defined by 10-foot telescopic Fleetwood glass doors that create seamless indoor/outdoor living. Blonde oak floors, a gourmet eat-in kitchen with gas range and stainless Miele appliances, and a separate catering kitchen with pantry and service entrance elevate daily life and entertaining. Additional living spaces include a comfortable breakfast area, wine room, bar, and family room. 
 
-The custom Italian kitchen features Miele appliances, marble countertops, and a butler's pantry. The primary suite is a private retreat with a sitting area, dual walk-in closets, and a spa bathroom with soaking tub overlooking the bay.
+The primary suite is a private retreat with panoramic sunset views, two dressing rooms, and a book-matched marble bath with rain shower and deep soaking tub. Outdoor amenities include wraparound terraces, an expansive rooftop entertaining area with pool and spa, a modern gazebo with summer kitchen and cabana bath, a privacy gate, and a two-car garage.`,
+  imageCount: 0,
+  status: 'available',
+  propertyType: 'single_family',
+  yearBuilt: 2018,
+  featured: true,
+},
+{
+  id: '3',
+  slug: '1004-fisher-island-drive-miami-beach',
+  title: '1004 Fisher Island Drive',
+  address: '1004 Fisher Island Drive, Miami Beach, FL 33109',
+  neighborhood: 'Fisher Island',
+  price: 36500000,
+  priceFormatted: '$36,500,000',
+  bedrooms: 8,
+  bathrooms: 12,
+  sqft: 10648,
+  sqftFormatted: '10,648',
+  shortDescription: 'Exclusive Fisher Island estate with waterfront access and extraordinary customization potential.',
+  description: `Located in one of the most private and prestigious enclaves in the United States, this rare Fisher Island estate presents an exceptional opportunity to customize a trophy residence exceeding 10,000 square feet. Positioned on an expansive waterfront lot with ocean access, the property commands privacy and expansive views of Biscayne Bay, emerald fairways, and the Miami skyline.
 
-Building amenities include a rooftop pool, full-service spa, state-of-the-art fitness center, residents' lounge, and 24-hour concierge service.`,
-    imageCount: 0, // Add photos to /public/listings/penthouse-brickell-skyline/
-    status: 'available',
-    propertyType: 'penthouse',
-    yearBuilt: 2019,
-    featured: true,
-  },
-  {
-    id: '3',
-    slug: 'coral-gables-mediterranean-estate',
-    title: 'Mediterranean Revival Estate',
-    address: '4500 Granada Boulevard',
-    neighborhood: 'Coral Gables',
-    price: 15750000,
-    priceFormatted: '$15,750,000',
-    bedrooms: 6,
-    bathrooms: 8,
-    sqft: 9800,
-    sqftFormatted: '9,800',
-    shortDescription: 'Exquisite Mediterranean estate on a lush acre with historic charm and modern amenities.',
-    description: `This magnificent Mediterranean Revival estate represents the finest of Coral Gables living. Set on a lush, manicured acre, the home masterfully blends historic architectural details with contemporary luxury and technology.
+The home offers a grand layout with multiple living spaces, elevator access, and opportunities to tailor interior finishes and exterior landscaping to suit exact lifestyle preferences. Additional features include a pool, ample parking, and proximity to the island’s private club, golf course, marina, and beach amenities.
 
-Original features including hand-painted ceiling murals, intricate ironwork, and coral stone fireplaces have been meticulously preserved, while the home has been completely updated with modern systems and amenities.
+This offering represents one of the last available estate sites on Fisher Island and invites a purchaser to realize a world-class architectural vision in a setting defined by exclusivity and luxury.`,
+  imageCount: 0,
+  status: 'available',
+  propertyType: 'single_family',
+  yearBuilt: 2006,
+  lotSize: '0.37 acres',
+  featured: true,
+},
+{
+  id: '4',
+  slug: '1005-fisher-island-drive-fisher-island',
+  title: '1005 Fisher Island Drive',
+  address: '1005 Fisher Island Drive, Fisher Island, FL 33109',
+  neighborhood: 'Fisher Island',
+  price: 29500000,
+  priceFormatted: '$29,500,000',
+  bedrooms: 7,
+  bathrooms: 7.5,
+  sqft: 7860,
+  sqftFormatted: '7,860',
+  shortDescription: 'Elegant waterfront Fisher Island residence with private dock and bay views.',
+  description: `Situated on the bayfront of ultra-exclusive Fisher Island, this elegant single-family residence offers direct water access, a private dock, and sweeping views of Biscayne Bay and the Miami skyline. The home blends classic architecture with resort-style living in one of the most secure and private communities in the country.
 
-The grounds feature mature tropical landscaping, a resort-style pool with cabana, outdoor kitchen, and tennis court. The property offers exceptional privacy while being moments from the shops and restaurants of Miracle Mile.
+Interior spaces are defined by generous ceiling heights, abundant natural light, and an open yet functional floor plan designed for both everyday living and entertaining. The gourmet kitchen connects seamlessly to formal and informal living areas, while multiple bedrooms offer ensuite baths and tranquil island views.
 
-A true entertainer's dream, the home includes a formal living room, dining room, library, family room, and a spectacular great room that opens to the pool terrace.`,
-    imageCount: 0, // Add photos to /public/listings/coral-gables-mediterranean-estate/
-    status: 'available',
-    propertyType: 'estate',
-    yearBuilt: 1928,
-    lotSize: '1 acre',
-    featured: true,
-  },
-  {
-    id: '4',
-    slug: 'miami-beach-art-deco-villa',
-    title: 'Art Deco Villa',
-    address: '2400 Pine Tree Drive',
-    neighborhood: 'Miami Beach',
-    price: 11200000,
-    priceFormatted: '$11,200,000',
-    bedrooms: 5,
-    bathrooms: 6,
-    sqft: 6800,
-    sqftFormatted: '6,800',
-    shortDescription: 'Restored Art Deco gem with waterfront views and private dock in prestigious Miami Beach.',
-    description: `A rare opportunity to own a piece of Miami Beach history. This stunning Art Deco villa has been impeccably restored and updated to offer the best of both worlds: timeless architectural beauty and modern luxury living.
-
-Located on prestigious Pine Tree Drive, the home offers waterfront views with a private dock capable of accommodating a 60-foot yacht. The interior showcases original Art Deco details including terrazzo floors, curved walls, and porthole windows, all beautifully complemented by contemporary finishes.
-
-The open floor plan is ideal for entertaining, with the living spaces flowing to an expansive pool deck overlooking the water. The chef's kitchen features custom cabinetry and professional-grade appliances.
-
-The primary suite occupies the entire second floor, offering water views, a sitting area, and a luxurious bathroom. Four additional bedroom suites provide comfort for family and guests.`,
-    imageCount: 0, // Add photos to /public/listings/miami-beach-art-deco-villa/
-    status: 'available',
-    propertyType: 'waterfront',
-    yearBuilt: 1935,
-    lotSize: '15,000 sq ft',
-    featured: false,
-  },
+Outdoor living is a standout feature, with a waterfront pool, expansive terraces, lush landscaping, and a private dock ideal for yachting enthusiasts. Ownership includes access to Fisher Island Club amenities including golf, tennis, beach club, marina, and private ferry service.`,
+  imageCount: 0,
+  status: 'available',
+  propertyType: 'single_family',
+  yearBuilt: 1989,
+  lotSize: '0.41 acres',
+  featured: false,
+},
   {
     id: '5',
     slug: 'coconut-grove-modern-retreat',
