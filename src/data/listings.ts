@@ -162,7 +162,7 @@ Outdoor living is a standout feature, with a waterfront pool, expansive terraces
 The chef’s kitchen is equipped with high-end appliances and opens to light-filled living and dining areas. Multiple ensuite bedrooms include a luxurious primary suite with direct water views. The outdoor space includes a pool, ample terrace areas, and a private dock with deep water access.
 
 The property provides full access to Fisher Island Club amenities including golf, tennis, beach club, marina, and exclusive ferry service, delivering a complete private island lifestyle.`,
-  imageCount: 0,
+  imageCount: 29,
   status: 'available',
   propertyType: 'single-family',
   yearBuilt: 1995,
