@@ -18,7 +18,7 @@ export default function Home() {
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920"
+            poster="https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920"
           >
             <source src="/videos/hero-aerial.mp4" type="video/mp4" />
           </video>
