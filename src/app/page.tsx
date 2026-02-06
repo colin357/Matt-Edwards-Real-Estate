@@ -227,19 +227,24 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {['Key Biscayne', 'Coral Gables', 'Coconut Grove', 'Miami Beach', 'Brickell', 'Fisher Island'].map((neighborhood) => (
-              <div key={neighborhood} className="group relative h-48 overflow-hidden cursor-pointer">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { name: 'Brickell', image: 'https://images.unsplash.com/photo-1704080864842-2577d94ebb1c?w=600' },
+              { name: 'Coral Gables', image: 'https://images.unsplash.com/photo-1704236600122-56a1401023d3?w=600' },
+              { name: 'Coconut Grove', image: 'https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=600' },
+              { name: 'Miami Beach', image: 'https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=600' },
+            ].map((neighborhood) => (
+              <div key={neighborhood.name} className="group relative h-48 overflow-hidden cursor-pointer">
                 <Image
-                  src={`https://images.unsplash.com/photo-160059654281${neighborhood.length}-ffad4c1539a9?w=400`}
-                  alt={neighborhood}
+                  src={neighborhood.image}
+                  alt={neighborhood.name}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-white text-sm font-medium tracking-wide text-center px-2">
-                    {neighborhood}
+                    {neighborhood.name}
                   </span>
                 </div>
               </div>
