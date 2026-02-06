@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,13 +12,23 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex flex-col">
-            <span className="text-xl font-semibold tracking-wide text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Matt Edwards
-            </span>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-[var(--muted)]">
-              Luxury Real Estate
-            </span>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/images/logo.png"
+              alt="Matt Edwards Luxury Real Estate"
+              width={48}
+              height={48}
+              className="h-12 w-auto"
+              priority
+            />
+            <div className="flex flex-col">
+              <span className="text-xl font-semibold tracking-wide text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>
+                Matt Edwards
+              </span>
+              <span className="text-[10px] tracking-[0.3em] uppercase text-[var(--muted)]">
+                Luxury Real Estate
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
