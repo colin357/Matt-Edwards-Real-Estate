@@ -305,7 +305,7 @@ Ownership includes convenient proximity to Miami Beach and Key Biscayne, offerin
 The residences feature spacious layouts with abundant natural light and seamless indoor-outdoor transitions. Multiple living and dining areas, gourmet kitchens, and ensuite bedrooms create comfortable daily living spaces while accommodating large-scale entertaining.
 
 Outdoor amenities include pools, expansive terraces, and lush tropical landscaping. This rare offering presents the opportunity for a compound or redevelopment in one of Miami Beach’s most prestigious waterfront neighborhoods.`,
-  imageCount: 0,
+  imageCount: 63,
   status: 'available',
   propertyType: 'estate',
   yearBuilt: 1991,
