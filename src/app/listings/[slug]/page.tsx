@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getListingBySlug, getAllListings, getListingImages } from "@/data/listings";
+import ImageGallery from "@/components/ImageGallery";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -53,7 +54,7 @@ export default async function ListingPage({ params }: Props) {
     <>
       {/* Hero Image Gallery */}
       <section className="pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-[70vh] min-h-[500px]">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 h-[70vh] min-h-[500px]">
           {/* Main Image */}
           <div className={`relative h-full ${!hasImages ? 'bg-gray-200 flex items-center justify-center' : ''}`}>
             {hasImages ? (
@@ -97,6 +98,8 @@ export default async function ListingPage({ params }: Props) {
               ))
             )}
           </div>
+          {/* Gallery overlay + lightbox */}
+          {hasImages && <ImageGallery images={images} title={listing.title} />}
         </div>
       </section>
 
