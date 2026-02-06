@@ -12,8 +12,10 @@ export interface Listing {
   sqftFormatted: string;
   description: string;
   shortDescription: string;
-  // Number of photos in /public/listings/{slug}/ folder (named 01.jpg, 02.jpg, etc.)
+  // Number of photos in /public/listings/{slug}/ folder (named 1.webp, 2.webp, etc.)
   imageCount: number;
+  // Override file extensions for specific image numbers (e.g., { 18: 'avif' })
+  imageExtOverrides?: Record<number, string>;
   videoUrl?: string;
   status: 'available' | 'pending' | 'sold';
   propertyType: 'single-family' | 'condo' | 'penthouse' | 'waterfront' | 'estate';
@@ -24,18 +26,19 @@ export interface Listing {
 
 /**
  * Generates image paths for a listing based on the imageCount.
- * Photos should be stored in /public/listings/{slug}/ as 01.jpg, 02.jpg, etc.
+ * Photos should be stored in /public/listings/{slug}/ as 1.webp, 2.webp, etc.
  *
  * To add photos to a listing:
  * 1. Add your photos to /public/listings/{slug}/
- * 2. Name them sequentially: 01.jpg, 02.jpg, 03.jpg, etc.
+ * 2. Name them sequentially: 1.webp, 2.webp, 3.webp, etc.
  * 3. Update the imageCount in the listing data
+ * 4. For non-webp images, add entries to imageExtOverrides (e.g., { 18: 'avif' })
  */
 export function getListingImages(listing: Listing): string[] {
   const images: string[] = [];
   for (let i = 1; i <= listing.imageCount; i++) {
-    const num = i.toString().padStart(2, '0');
-    images.push(`/listings/${listing.slug}/${num}.jpg`);
+    const ext = listing.imageExtOverrides?.[i] ?? 'webp';
+    images.push(`/listings/${listing.slug}/${i}.${ext}`);
   }
   return images;
 }
@@ -56,7 +59,8 @@ export const listings: Listing[] = [
     sqftFormatted: '15,801',
     shortDescription: 'THE GRANDE DAME OF FISHER ISLAND... THE MEGA MANSION No.7 SITS ON OVER HALF ACRE OF LUSH GARDENS & WATER FEATURES WITH STUNNING DIRECT BAY & GOLF COURSE VIEWS!',
     description: `THE GRANDE DAME OF FISHER ISLAND... THE MEGA MANSION No.7 SITS ON OVER HALF ACRE OF LUSH GARDENS & WATER FEATURES WITH STUNNING DIRECT BAY & GOLF COURSE VIEWS! This Modern Tuscan Mansion features over 15,800 SF of Interior Living Space + Massive Outdoor Spaces for Entertaining. The Largest & Most Opulent Mansion on Fisher Island features 8 Bedrooms + 10 Bathrooms + 2 Powder Rooms. European White Premium select Oak Flooring & Italian Stone throughout--Italian Kitchen equipped with top-of-the-line Wolf & Sub-Zero Appliances. Expansive Master Suite with His & Hers Baths features Dornbracht Fixtures + Huge Dressing Rooms. Infinity Edge Pool & Spa. Rooftop with Wellness areas + Yoga Meditation Deck with 360-degree views. Architecture by Portuondo Perotti Architects. 4 Car Garage + Large Driveway.`,
-    imageCount: 32, // Add photos to /public/listings/fisher-island-mansion-7/
+    imageCount: 32,
+    imageExtOverrides: { 18: 'avif', 23: 'avif' },
     status: 'available',
     propertyType: 'single-family',
     yearBuilt: 2026,
