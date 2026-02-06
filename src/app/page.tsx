@@ -96,7 +96,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative h-[500px] lg:h-[600px]">
                 <Image
-                  src="/images/headshot.jpg"
+                  src="/images/headshot.webp"
                   alt="Miami luxury real estate"
                   fill
                   className="object-cover"
