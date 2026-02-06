@@ -14,6 +14,8 @@ export interface Listing {
   shortDescription: string;
   // Number of photos in /public/listings/{slug}/ folder (named 1.webp, 2.webp, etc.)
   imageCount: number;
+  // Default file extension for listing photos (e.g., 'webp' or 'avif')
+  imageDefaultExt?: 'webp' | 'avif';
   // Override file extensions for specific image numbers (e.g., { 18: 'avif' })
   imageExtOverrides?: Record<number, string>;
   videoUrl?: string;
@@ -32,12 +34,13 @@ export interface Listing {
  * 1. Add your photos to /public/listings/{slug}/
  * 2. Name them sequentially: 1.webp, 2.webp, 3.webp, etc.
  * 3. Update the imageCount in the listing data
- * 4. For non-webp images, add entries to imageExtOverrides (e.g., { 18: 'avif' })
+ * 4. For all-avif listings, set imageDefaultExt: 'avif'
+ * 5. For mixed formats, add entries to imageExtOverrides (e.g., { 18: 'avif' })
  */
 export function getListingImages(listing: Listing): string[] {
   const images: string[] = [];
   for (let i = 1; i <= listing.imageCount; i++) {
-    const ext = listing.imageExtOverrides?.[i] ?? 'webp';
+    const ext = listing.imageExtOverrides?.[i] ?? listing.imageDefaultExt ?? 'webp';
     images.push(`/listings/${listing.slug}/${i}.${ext}`);
   }
   return images;
