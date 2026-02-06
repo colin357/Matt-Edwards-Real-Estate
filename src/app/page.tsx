@@ -10,15 +10,18 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative h-screen min-h-[700px] flex items-center">
-        {/* Background Image */}
+        {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920"
-            alt="Luxury Miami waterfront property"
-            fill
-            className="object-cover"
-            priority
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920"
+          >
+            <source src="/videos/hero-aerial.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
         </div>
 
