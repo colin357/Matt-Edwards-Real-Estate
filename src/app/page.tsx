@@ -193,7 +193,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative h-[400px] lg:h-[500px] bg-gray-800 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"
+                  src="https://drive.google.com/file/d/1ZH8_x0DBGFK6vpCUnvEKMiON-TgJ0f1O/view?usp=drive_link"
                   alt="Property video production"
                   fill
                   className="object-cover opacity-80"
