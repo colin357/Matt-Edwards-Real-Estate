@@ -261,7 +261,7 @@ The residences feature spacious layouts with abundant natural light and seamless
 Outdoor amenities include pools, expansive terraces, and lush tropical landscaping. This rare offering presents the opportunity for a compound or redevelopment in one of Miami Beach’s most prestigious waterfront neighborhoods.`,
   imageCount: 0,
   status: 'available',
-  propertyType: 'multi_structure',
+  propertyType: 'estate',
   yearBuilt: 1991,
   lotSize: '0.60 acres',
   featured: false,
