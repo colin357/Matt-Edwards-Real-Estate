@@ -91,7 +91,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-24 bg-[var(--cream)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Image */}
             <div className="relative">
               <div className="relative h-[500px] lg:h-[600px]">
@@ -234,7 +234,7 @@ export default function Home() {
               { name: 'Coconut Grove', image: 'https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=600' },
               { name: 'Miami Beach', image: 'https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=600' },
             ].map((neighborhood) => (
-              <div key={neighborhood.name} className="group relative h-48 overflow-hidden cursor-pointer">
+              <div key={neighborhood.name} className="group relative h-48 overflow-hidden">
                 <Image
                   src={neighborhood.image}
                   alt={neighborhood.name}
