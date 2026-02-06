@@ -134,7 +134,7 @@ This offering represents one of the last available estate sites on Fisher Island
 Interior spaces are defined by generous ceiling heights, abundant natural light, and an open yet functional floor plan designed for both everyday living and entertaining. The gourmet kitchen connects seamlessly to formal and informal living areas, while multiple bedrooms offer ensuite baths and tranquil island views.
 
 Outdoor living is a standout feature, with a waterfront pool, expansive terraces, lush landscaping, and a private dock ideal for yachting enthusiasts. Ownership includes access to Fisher Island Club amenities including golf, tennis, beach club, marina, and private ferry service.`,
-  imageCount: 0,
+  imageCount: 30,
   status: 'available',
   propertyType: 'single-family',
   yearBuilt: 1989,
