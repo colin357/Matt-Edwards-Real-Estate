@@ -85,7 +85,7 @@ export const listings: Listing[] = [
 The open floor plan is defined by 10-foot telescopic Fleetwood glass doors that create seamless indoor/outdoor living. Blonde oak floors, a gourmet eat-in kitchen with gas range and stainless Miele appliances, and a separate catering kitchen with pantry and service entrance elevate daily life and entertaining. Additional living spaces include a comfortable breakfast area, wine room, bar, and family room. 
 
 The primary suite is a private retreat with panoramic sunset views, two dressing rooms, and a book-matched marble bath with rain shower and deep soaking tub. Outdoor amenities include wraparound terraces, an expansive rooftop entertaining area with pool and spa, a modern gazebo with summer kitchen and cabana bath, a privacy gate, and a two-car garage.`,
-  imageCount: 0,
+  imageCount: 54,
   status: 'available',
   propertyType: 'single-family',
   yearBuilt: 2018,
