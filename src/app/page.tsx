@@ -20,7 +20,7 @@ export default function Home() {
             className="absolute inset-0 w-full h-full object-cover"
             poster="https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920"
           >
-            <source src="/videos/hero-aerial.mp4" type="video/mp4" />
+            <source src="/videos/miami-beach.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
         </div>
@@ -32,17 +32,17 @@ export default function Home() {
               Miami Luxury Real Estate
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold leading-tight mb-6 animate-fade-in delay-100" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Exceptional Properties for Discerning Clients
+              Exceptional Lifestyle Properties for High-Net Worth Clients
             </h1>
             <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed animate-fade-in delay-200">
-              Precision, privacy, and performance in every transaction. Experience Miami&apos;s most exclusive properties with personalized service.
+              Customized for your needs. Experience Miami&apos;s most exclusive properties from a local&apos;s-only perspective.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in delay-300">
               <Link href="#listings" className="btn-primary text-center">
                 View Listings
               </Link>
               <Link href="#contact" className="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--charcoal)] text-center">
-                Schedule Consultation
+                Call Me
               </Link>
             </div>
           </div>
@@ -53,38 +53,6 @@ export default function Home() {
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </div>
-      </section>
-
-      {/* Featured Listings Section */}
-      <section id="listings" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4">
-              Portfolio
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-[var(--charcoal)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Featured Properties
-            </h2>
-            <p className="text-[var(--muted)] max-w-2xl mx-auto">
-              A curated selection of Miami&apos;s most exceptional residences, each representing the pinnacle of luxury living.
-            </p>
-          </div>
-
-          {/* Featured Listings Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {featuredListings.slice(0, 4).map((listing) => (
-              <ListingCard key={listing.id} listing={listing} featured />
-            ))}
-          </div>
-
-          {/* View All Listings */}
-          <div className="text-center">
-            <Link href="/listings" className="btn-secondary inline-block">
-              View All Listings
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -125,30 +93,57 @@ export default function Home() {
                   Matt knows Miami inside and out. From the historic estates of Coral Gables to the sleek penthouses of Brickell, from the exclusive enclaves of Fisher Island to the vibrant streets of Coconut Grove, his intimate knowledge of each neighborhood ensures clients find not just a property, but the perfect lifestyle.
                 </p>
               </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 mt-10 pt-10 border-t border-gray-200">
-                <div>
-                  <p className="text-3xl font-semibold text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>$200M+</p>
-                  <p className="text-sm text-[var(--muted)] mt-1">Sales Volume</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>150+</p>
-                  <p className="text-sm text-[var(--muted)] mt-1">Properties Sold</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-semibold text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>15+</p>
-                  <p className="text-sm text-[var(--muted)] mt-1">Years Experience</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Video Marketing Section */}
-      <section className="py-24 bg-[var(--charcoal)] text-white">
+      {/* Featured Listings Section */}
+      <section id="listings" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4">
+              Portfolio
+            </p>
+            <h2 className="text-3xl md:text-4xl font-semibold text-[var(--charcoal)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+              Featured Properties
+            </h2>
+            <p className="text-[var(--muted)] max-w-2xl mx-auto">
+              A curated selection of Miami&apos;s most exceptional residences, each representing the pinnacle of luxury living.
+            </p>
+          </div>
+
+          {/* Featured Listings Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {featuredListings.slice(0, 4).map((listing) => (
+              <ListingCard key={listing.id} listing={listing} featured />
+            ))}
+          </div>
+
+          {/* View All Listings */}
+          <div className="text-center">
+            <Link href="/listings" className="btn-secondary inline-block">
+              View All Listings
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Marketing Section */}
+      <section className="relative py-24 text-white overflow-hidden">
+        {/* Ocean Background with blur and dark tint */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80"
+            alt=""
+            fill
+            className="object-cover blur-sm"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Content */}
             <div>
@@ -158,32 +153,24 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
                 Properties Presented for the Modern Era
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 In today&apos;s market, exceptional properties deserve exceptional presentation. Matt leverages cutting-edge video production, cinematic photography, and strategic digital marketing to ensure your property reaches qualified buyers worldwide.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <span className="text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0 font-medium">&mdash;</span>
                   <span className="text-gray-300">Cinematic property videos and virtual tours</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <span className="text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0 font-medium">&mdash;</span>
                   <span className="text-gray-300">Professional photography and drone footage</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <span className="text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0 font-medium">&mdash;</span>
                   <span className="text-gray-300">Targeted social media and digital campaigns</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-5 h-5 text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <span className="text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0 font-medium">&mdash;</span>
                   <span className="text-gray-300">Global network of luxury real estate connections</span>
                 </li>
               </ul>
@@ -206,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Neighborhoods Section */}
-      <section className="py-24 bg-white">
+      <section id="neighborhoods" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4">
@@ -220,14 +207,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { name: 'Brickell', image: 'https://images.unsplash.com/photo-1704080864842-2577d94ebb1c?w=600' },
-              { name: 'Coral Gables', image: 'https://images.unsplash.com/photo-1704236600122-56a1401023d3?w=600' },
-              { name: 'Coconut Grove', image: 'https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=600' },
-              { name: 'Miami Beach', image: 'https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=600' },
+              { name: 'South of Fifth', slug: 'south-of-fifth', image: 'https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=600' },
+              { name: 'Sunset Harbor', slug: 'sunset-harbor', image: 'https://images.unsplash.com/photo-1704236600122-56a1401023d3?w=600' },
+              { name: 'Brickell', slug: 'brickell', image: 'https://images.unsplash.com/photo-1704080864842-2577d94ebb1c?w=600' },
+              { name: 'Coconut Grove', slug: 'coconut-grove', image: 'https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=600' },
+              { name: 'Fisher Island', slug: 'fisher-island', image: 'https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=600' },
             ].map((neighborhood) => (
-              <div key={neighborhood.name} className="group relative h-48 overflow-hidden">
+              <Link key={neighborhood.name} href={`/neighborhoods/${neighborhood.slug}`} className="group relative h-48 overflow-hidden block">
                 <Image
                   src={neighborhood.image}
                   alt={neighborhood.name}
@@ -240,7 +228,7 @@ export default function Home() {
                     {neighborhood.name}
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -255,12 +243,9 @@ export default function Home() {
               <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4">
                 Get in Touch
               </p>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[var(--charcoal)] mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+              <h2 className="text-3xl md:text-4xl font-semibold text-[var(--charcoal)] mb-8" style={{ fontFamily: 'var(--font-playfair)' }}>
                 Let&apos;s Discuss Your Real Estate Goals
               </h2>
-              <p className="text-[var(--muted)] leading-relaxed mb-8">
-                Whether you&apos;re looking to buy, sell, or simply explore the Miami luxury market, Matt provides the personalized guidance and market expertise you need to make confident decisions.
-              </p>
 
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -311,7 +296,7 @@ export default function Home() {
             {/* Contact Form */}
             <div className="bg-white p-8 lg:p-10 shadow-lg">
               <h3 className="text-xl font-semibold text-[var(--charcoal)] mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
-                Schedule a Consultation
+                Call Me
               </h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
