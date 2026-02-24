@@ -41,7 +41,7 @@ export default function Home() {
               <Link href="#listings" className="btn-primary text-center">
                 View Listings
               </Link>
-              <Link href="#contact" className="btn-secondary bg-white/20 text-white border-white backdrop-blur-sm hover:bg-white hover:text-[var(--charcoal)] text-center">
+              <Link href="#contact" className="btn-secondary bg-white text-[var(--charcoal)] border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center">
                 Call Me
               </Link>
             </div>
@@ -93,6 +93,19 @@ export default function Home() {
                   Matt knows Miami inside and out. From the historic estates of Coral Gables to the sleek penthouses of Brickell, from the exclusive enclaves of Fisher Island to the vibrant streets of Coconut Grove, his intimate knowledge of each neighborhood ensures clients find not just a property, but the perfect lifestyle.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* VSL Video */}
+          <div className="mt-16">
+            <div className="relative aspect-video max-w-4xl mx-auto bg-gray-100 overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/qMcIVQBrKuo?rel=0"
+                title="Matt Edwards - Miami Luxury Real Estate"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
           </div>
         </div>
