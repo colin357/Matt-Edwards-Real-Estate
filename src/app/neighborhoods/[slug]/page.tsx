@@ -3,12 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getNeighborhoodBySlug, getAllNeighborhoodSlugs } from "@/data/neighborhoods";
 
-export function generateStaticParams() {
-  return getAllNeighborhoodSlugs().map((slug) => ({ slug }));
-}
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const neighborhood = getNeighborhoodBySlug(params.slug);
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const neighborhood = getNeighborhoodBySlug(slug);
   if (!neighborhood) return {};
 
   return {
@@ -17,8 +18,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function NeighborhoodPage({ params }: { params: { slug: string } }) {
-  const neighborhood = getNeighborhoodBySlug(params.slug);
+export async function generateStaticParams() {
+  return getAllNeighborhoodSlugs().map((slug) => ({ slug }));
+}
+
+export default async function NeighborhoodPage({ params }: Props) {
+  const { slug } = await params;
+  const neighborhood = getNeighborhoodBySlug(slug);
 
   if (!neighborhood) {
     notFound();
