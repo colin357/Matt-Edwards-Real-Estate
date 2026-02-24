@@ -55,7 +55,7 @@ export default function Header() {
               href="/#contact"
               className="btn-primary"
             >
-              Schedule Consultation
+              Call Me
             </Link>
           </div>
 
@@ -120,7 +120,7 @@ export default function Header() {
                 className="btn-primary text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Schedule Consultation
+                Call Me
               </Link>
             </div>
           </div>
