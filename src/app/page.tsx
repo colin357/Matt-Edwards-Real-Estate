@@ -41,7 +41,7 @@ export default function Home() {
               <Link href="#listings" className="btn-primary text-center">
                 View Listings
               </Link>
-              <Link href="#contact" className="btn-secondary bg-white text-[var(--charcoal)] border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center">
+              <Link href="#contact" className="bg-white text-[var(--charcoal)] border border-white px-8 py-3.5 font-medium tracking-wider uppercase text-xs transition-all duration-300 hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center">
                 Call Me
               </Link>
             </div>
