@@ -20,7 +20,7 @@ export default function Home() {
             className="absolute inset-0 w-full h-full object-cover"
             poster="https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920"
           >
-            <source src="/videos/miami-beach.mp4" type="video/mp4" />
+            <source src="https://assets.mixkit.co/videos/24555/24555-720.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
         </div>
@@ -41,7 +41,7 @@ export default function Home() {
               <Link href="#listings" className="btn-primary text-center">
                 View Listings
               </Link>
-              <Link href="#contact" className="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--charcoal)] text-center">
+              <Link href="#contact" className="btn-secondary bg-white/20 text-white border-white backdrop-blur-sm hover:bg-white hover:text-[var(--charcoal)] text-center">
                 Call Me
               </Link>
             </div>
@@ -138,9 +138,9 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80"
             alt=""
             fill
-            className="object-cover blur-sm"
+            className="object-cover blur-[2px]"
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
