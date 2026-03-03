@@ -220,15 +220,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { name: 'South of Fifth', slug: 'south-of-fifth', image: 'https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=600' },
-              { name: 'Sunset Harbor', slug: 'sunset-harbor', image: 'https://images.unsplash.com/photo-1704236600122-56a1401023d3?w=600' },
-              { name: 'Brickell', slug: 'brickell', image: 'https://images.unsplash.com/photo-1704080864842-2577d94ebb1c?w=600' },
-              { name: 'Coconut Grove', slug: 'coconut-grove', image: 'https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=600' },
-              { name: 'Fisher Island', slug: 'fisher-island', image: 'https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=600' },
+              { name: 'Miami Condos', image: 'https://images.unsplash.com/photo-1704080864842-2577d94ebb1c?w=600' },
+              { name: 'Miami Single Family', image: 'https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=600' },
+              { name: 'Miami Beach Condos', image: 'https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=600' },
+              { name: 'Miami Beach Single Family', image: 'https://images.unsplash.com/photo-1704236600122-56a1401023d3?w=600' },
             ].map((neighborhood) => (
-              <Link key={neighborhood.name} href={`/neighborhoods/${neighborhood.slug}`} className="group relative h-48 overflow-hidden block">
+              <div key={neighborhood.name} className="group relative h-48 overflow-hidden block cursor-pointer">
                 <Image
                   src={neighborhood.image}
                   alt={neighborhood.name}
@@ -241,7 +240,7 @@ export default function Home() {
                     {neighborhood.name}
                   </span>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

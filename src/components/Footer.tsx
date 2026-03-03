@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,13 +8,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex flex-col mb-6">
-              <span className="text-2xl font-semibold tracking-wide" style={{ fontFamily: 'var(--font-playfair)' }}>
-                Matt Edwards
-              </span>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-gray-400">
-                Luxury Real Estate
-              </span>
+            <div className="flex items-center gap-4 mb-6">
+              <Image
+                src="/images/logo.png"
+                alt="Luxe Living Realty"
+                width={48}
+                height={48}
+                className="invert"
+              />
+              <div className="flex flex-col">
+                <span className="text-2xl font-semibold tracking-wide" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  Matt Edwards
+                </span>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-gray-400">
+                  Luxe Living Realty
+                </span>
+              </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-md">
               Serving high-end buyers and sellers in Miami with precision, privacy, and performance.
@@ -51,7 +61,8 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-3 text-gray-400 text-sm">
-              <li>Miami, Florida</li>
+              <li>1680 Michigan Avenue, Suite 100</li>
+              <li>Miami Beach, FL 33139</li>
               <li>
                 <a href="mailto:matt@luxelivingmiami.com" className="hover:text-white transition-colors">
                   matt@luxelivingmiami.com
