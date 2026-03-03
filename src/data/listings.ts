@@ -184,7 +184,7 @@ Outdoor living is a standout feature, with a waterfront pool, expansive terraces
   propertyType: 'single-family',
   yearBuilt: 1989,
   lotSize: '0.41 acres',
-  featured: false,
+  featured: true,
 },
 {
   id: '1003-fisher-island-drive',
