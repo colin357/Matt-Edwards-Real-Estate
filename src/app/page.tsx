@@ -100,7 +100,7 @@ export default function Home() {
           <div className="mt-16">
             <div className="relative aspect-video max-w-4xl mx-auto bg-gray-100 overflow-hidden shadow-lg">
               <iframe
-                src="https://www.youtube.com/embed/vbNVlaWzjks?rel=0"
+                src="https://www.youtube.com/embed/qMcIVQBrKuo?rel=0"
                 title="Matt Edwards - Miami Luxury Real Estate"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -193,7 +193,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative aspect-video bg-gray-800 overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/CuiIn449ypA?rel=0"
+                  src="https://www.youtube.com/embed/vbNVlaWzjks?rel=0"
                   title="Matt Edwards - Luxury Real Estate Marketing"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
