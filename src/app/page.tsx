@@ -87,10 +87,10 @@ export default function Home() {
                   Matt Edwards is a luxury real estate professional serving high-end buyers and sellers throughout Miami. With deep expertise in the local market, Matt specializes in residential, waterfront, and lifestyle-driven properties for clients who expect precision, privacy, and performance.
                 </p>
                 <p>
-                  What sets Matt apart is his commitment to modern marketing and personalized service, to drive eyes to your property and increase its value.
+                  What sets Matt apart is his commitment to modern marketing and personalized service, to drive eyes to your property and increase its future sale value.
                 </p>
                 <p>
-                  Matt knows Miami inside and out. From the historic estates of Coral Gables to the sleek penthouses of Brickell, from the exclusive enclaves of Fisher Island to the vibrant streets of Coconut Grove, his intimate knowledge of each neighborhood ensures clients find not just a property, but the perfect lifestyle.
+                  Matt knows Miami inside and out and can provide locals-only information and experiences. From the historic estates of Coral Gables to the sleek penthouses of Brickell, from the exclusive enclaves of Fisher Island to the vibrant streets of Coconut Grove, his intimate knowledge of each neighborhood ensures clients find not just a property, but the perfect lifestyle.
                 </p>
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function Home() {
                 Properties Presented for the Modern Era
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
-                In today&apos;s market, exceptional properties deserve exceptional presentation. Matt leverages cutting-edge video production, cinematic photography, and strategic digital marketing to ensure your property reaches qualified buyers worldwide.
+                In today&apos;s market, exceptional properties deserve exceptional video presentation. 70% of buyers say that video footage of a listing helps them make a decision, especially when making a long-distance move. This becomes incredibly important due to Miami's diverse population of homebuyers from across the United States and internationally. Matt leverages cutting-edge video production, cinematic photography, and strategic digital marketing to ensure your property reaches qualified buyers worldwide.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
