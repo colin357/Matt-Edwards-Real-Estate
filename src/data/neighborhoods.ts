@@ -201,6 +201,44 @@ export const neighborhoods: Neighborhood[] = [
       "The community on Fisher Island is genuinely special. Because it's so small and private, residents actually know each other. There's a neighborly quality that you wouldn't expect in a place of this caliber. It's a real community, just an extraordinarily exclusive one.",
       "From a real estate perspective, Fisher Island inventory is extremely limited. Properties rarely come to market, and when they do, they move quickly. I've handled numerous transactions on the island, and I can tell you that buying here is as much about relationships and access as it is about the property itself. If Fisher Island is on your radar, reach out early."
     ]
+  },
+  {
+    name: "Coral Gables",
+    slug: "coral-gables",
+    tagline: "The City Beautiful",
+    heroImage: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80",
+    description: [
+      "Coral Gables, known as 'The City Beautiful,' is one of South Florida's most distinguished communities. Founded in the 1920s by George Merrick, the city is defined by its Mediterranean Revival architecture, tree-lined boulevards, and meticulous urban planning. It remains one of the most desirable residential addresses in the Miami area.",
+      "The neighborhood is anchored by the iconic Biltmore Hotel, a National Historic Landmark, and the Venetian Pool, a stunning spring-fed swimming hole carved from coral rock. Miracle Mile, the city's main commercial corridor, features boutique shopping, fine dining, and art galleries that reflect the community's cultivated character.",
+      "Residential offerings in Coral Gables range from historic Mediterranean estates on sprawling lots to modern new construction. The area is home to the University of Miami and boasts some of the best public and private schools in the state, making it a top choice for families seeking both prestige and quality of life."
+    ],
+    whatToDo: [
+      {
+        title: "Biltmore Hotel",
+        description: "A landmark 1926 hotel featuring a world-class golf course, spa, and stunning architecture. The Sunday brunch is a Coral Gables institution."
+      },
+      {
+        title: "Venetian Pool",
+        description: "A spring-fed public swimming pool carved from a coral rock quarry in 1924. One of the most beautiful and unique pools in the country."
+      },
+      {
+        title: "Miracle Mile & Shops at Merrick Park",
+        description: "Upscale shopping and dining along Coral Gables' main commercial streets, featuring everything from Nordstrom to locally owned boutiques and restaurants."
+      },
+      {
+        title: "Fairchild Tropical Botanic Garden",
+        description: "An 83-acre tropical garden showcasing rare plants, butterfly exhibits, and world-class horticultural collections along Biscayne Bay."
+      },
+      {
+        title: "Riviera Country Club",
+        description: "One of the most prestigious private clubs in South Florida, offering golf, tennis, dining, and social events in an elegant setting."
+      }
+    ],
+    mattsTake: [
+      "Coral Gables is where I send clients who want a sense of permanence and prestige. The architecture, the tree canopy, the wide boulevards — everything here was designed with intention. It's one of the few places in Miami that feels like it was built to last.",
+      "For families, Coral Gables is exceptional. The schools are among the best in Miami-Dade County, the streets are safe and beautifully maintained, and there's a genuine sense of community. It's the kind of place where kids grow up riding bikes to the Venetian Pool.",
+      "From a real estate standpoint, Coral Gables has incredible staying power. The strict zoning, architectural standards, and limited inventory mean that values here are remarkably stable. Historic estates on large lots are increasingly rare, and new construction in prime locations commands top dollar. If you're looking for a legacy property in Miami, Coral Gables should be on your list."
+    ]
   }
 ];
 

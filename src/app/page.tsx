@@ -27,7 +27,7 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-20">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl mx-auto text-center">
             <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4 animate-fade-in">
               Miami Luxury Real Estate
             </p>
@@ -35,13 +35,13 @@ export default function Home() {
               Exceptional Lifestyle Properties for High-Net Worth Clients
             </h1>
             <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed animate-fade-in delay-200">
-              Customized for your needs. Experience Miami&apos;s most exclusive properties from a local&apos;s-only perspective.
+              Experience Miami&apos;s exclusive properties from a local&apos;s-only perspective.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in delay-300">
-              <Link href="#listings" className="btn-primary text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-300">
+              <Link href="#listings" className="bg-white text-[var(--charcoal)] border border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-10 py-4 font-medium tracking-[0.05em] uppercase text-sm transition-all duration-300">
                 View Listings
               </Link>
-              <Link href="#contact" className="btn-secondary bg-white text-[var(--charcoal)] border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center">
+              <Link href="#contact" className="btn-secondary bg-transparent text-white border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-8 py-4 text-sm">
                 Call Me
               </Link>
             </div>
@@ -87,7 +87,7 @@ export default function Home() {
                   Matt Edwards is a luxury real estate professional serving high-end buyers and sellers throughout Miami. With deep expertise in the local market, Matt specializes in residential, waterfront, and lifestyle-driven properties for clients who expect precision, privacy, and performance.
                 </p>
                 <p>
-                  What sets Matt apart is his commitment to modern marketing and high-quality content creation. Every property receives a bespoke marketing strategy designed for today&apos;s discerning buyers, with video tours and cinematic presentations that showcase each home at its absolute best.
+                  What sets Matt apart is his commitment to modern marketing and personalized service, to drive eyes to your property and increase its value.
                 </p>
                 <p>
                   Matt knows Miami inside and out. From the historic estates of Coral Gables to the sleek penthouses of Brickell, from the exclusive enclaves of Fisher Island to the vibrant streets of Coconut Grove, his intimate knowledge of each neighborhood ensures clients find not just a property, but the perfect lifestyle.
@@ -220,14 +220,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { name: 'Miami Condos', image: 'https://images.unsplash.com/photo-1704080864842-2577d94ebb1c?w=600' },
-              { name: 'Miami Single Family', image: 'https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=600' },
-              { name: 'Miami Beach Condos', image: 'https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=600' },
-              { name: 'Miami Beach Single Family', image: 'https://images.unsplash.com/photo-1704236600122-56a1401023d3?w=600' },
+              { name: 'South of Fifth', slug: 'south-of-fifth', image: 'https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=600' },
+              { name: 'Fisher Island', slug: 'fisher-island', image: 'https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=600' },
+              { name: 'Brickell', slug: 'brickell', image: 'https://images.unsplash.com/photo-1704080864842-2577d94ebb1c?w=600' },
+              { name: 'Coconut Grove', slug: 'coconut-grove', image: 'https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=600' },
+              { name: 'Coral Gables', slug: 'coral-gables', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600' },
             ].map((neighborhood) => (
-              <div key={neighborhood.name} className="group relative h-48 overflow-hidden block cursor-pointer">
+              <Link key={neighborhood.name} href={`/neighborhoods/${neighborhood.slug}`} className="group relative h-48 overflow-hidden block">
                 <Image
                   src={neighborhood.image}
                   alt={neighborhood.name}
@@ -240,7 +241,7 @@ export default function Home() {
                     {neighborhood.name}
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

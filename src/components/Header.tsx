@@ -22,7 +22,7 @@ export default function Header() {
               priority
             />
             <div className="flex flex-col">
-              <span className="text-xl font-semibold tracking-wide text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>
+              <span className="text-2xl font-light tracking-[0.15em] uppercase text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-heading)' }}>
                 Matt Edwards
               </span>
               <span className="text-[10px] tracking-[0.3em] uppercase text-[var(--muted)]">
