@@ -8,22 +8,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-6 mb-6">
               <Image
                 src="/images/logo.png"
-                alt="Luxe Living Realty"
+                alt="Matt Edwards"
                 width={48}
                 height={48}
-                className="invert"
+                className="h-12 w-auto"
               />
-              <div className="flex flex-col">
-                <span className="text-2xl font-semibold tracking-wide" style={{ fontFamily: 'var(--font-playfair)' }}>
-                  Matt Edwards
-                </span>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-gray-400">
-                  Luxe Living Realty
-                </span>
-              </div>
+              <Image
+                src="/images/Luxe Living.png"
+                alt="Luxe Living Realty"
+                width={120}
+                height={48}
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-md">
               Serving high-end buyers and sellers in Miami with precision, privacy, and performance.
