@@ -42,12 +42,16 @@ export const neighborhoods: Neighborhood[] = [
       {
         title: "First Street Beach",
         description: "A quieter, less crowded stretch of sand compared to the more touristy beaches further north. Locals love it for morning walks and weekend relaxation."
+      },
+      {
+        title: "Pura Vida",
+        description: "A beloved neighborhood café and restaurant serving health-conscious, vibrant dishes. A go-to spot for locals starting their morning or grabbing a post-workout bite."
       }
     ],
     mattsTake: [
       "South of Fifth is where I send clients who want the best of the best without the noise. It's Miami Beach for people who actually live here, not just visit. The neighborhood has a residential quality that you won't find anywhere else on the island.",
-      "What I love about SoFi is the walkability. You can grab a coffee at Panther, walk your dog through South Pointe Park, have dinner at Macchialina, and never get in your car. For a city built around driving, that's rare and valuable.",
-      "From an investment perspective, SoFi has consistently outperformed the rest of Miami Beach. The limited inventory, prime location, and high barriers to entry mean that properties here hold their value exceptionally well. If you're looking for a trophy asset in Miami, this is where to start."
+      "What I love about SoFi is the walkability, the wellness, and the community. The average age is 55, but everyone is entrepreneurial and there's a lot of energy. You can grab a coffee at Pura Vida, walk your dog through South Pointe Park, have dinner at Smith and Wollensky, and never get in your car. For a city built around driving, that's unique.",
+      "From an investment perspective, SoFi has consistently outperformed the rest of Miami Beach. It's where I also choose to live. The limited inventory, prime location, and high barriers to entry mean that properties here hold their value exceptionally well. If you're looking for a trophy asset in Miami, this is where to start."
     ]
   },
   {
@@ -96,34 +100,42 @@ export const neighborhoods: Neighborhood[] = [
     description: [
       "Brickell is Miami's most dynamic urban neighborhood. Known as the financial district of South Florida, it has evolved far beyond its corporate roots into a vibrant residential community with world-class dining, nightlife, and retail. The skyline is defined by sleek glass towers that house some of the city's most sought-after condominiums.",
       "Brickell City Centre, a $1.05 billion mixed-use development, serves as the neighborhood's central hub, offering luxury shopping, restaurants, and a climate-controlled open-air design. The surrounding streets are lined with cafes, cocktail bars, and international restaurants that cater to the neighborhood's cosmopolitan population.",
-      "The Brickell waterfront along Biscayne Bay provides a scenic backdrop for jogging, cycling, and outdoor dining. With Metromover access and proximity to downtown, Key Biscayne, and Coconut Grove, Brickell offers connectivity that few Miami neighborhoods can match."
+      "The Brickell waterfront along Biscayne Bay provides a scenic backdrop for your morning walk, meals, or work. Many of the buildings are extremely amenity-driven — with pools, gyms, spas, coworking spaces, and restaurants all on-site — so you don't need to leave the building if you don't want to."
     ],
     whatToDo: [
       {
         title: "Brickell City Centre",
-        description: "A sprawling mixed-use complex with high-end retail, dining, a cinema, and the climate ribbon, an innovative architectural feature that provides natural ventilation."
+        description: "A sprawling mixed-use complex with high-end retail, dining, and a cinema."
       },
       {
-        title: "Komodo",
-        description: "A three-story indoor/outdoor eatery and lounge serving Southeast Asian cuisine. Known for its vibrant atmosphere and celebrity sightings."
+        title: "Amazónico",
+        description: "A stunning Amazonian-themed restaurant serving South American cuisine with theatrical flair. One of the hottest tables in Miami."
+      },
+      {
+        title: "Casa Tua Cucina",
+        description: "An elegant Italian restaurant inside Brickell City Centre known for its intimate atmosphere, housemade pastas, and exceptional wine list."
       },
       {
         title: "Brickell Key",
         description: "A small island connected by bridge, offering a quieter residential vibe with waterfront parks and stunning skyline views."
       },
       {
-        title: "Simpson Park Hammock",
-        description: "A hidden gem in the heart of Brickell, this preserved hardwood hammock is a lush, tranquil escape from the urban energy."
+        title: "Equinox",
+        description: "Brickell is home to two Equinox gyms, making it one of the best neighborhoods in Miami for fitness enthusiasts who want world-class facilities steps from home."
       },
       {
-        title: "The Underline",
-        description: "A 10-mile linear park and urban trail running beneath the Metrorail, connecting Brickell to Dadeland with art, nature, and recreation."
+        title: "Sugar Rooftop",
+        description: "A rooftop bar and garden atop the EAST Miami hotel with sweeping views of Brickell and Biscayne Bay. A perfect spot for sunset drinks."
+      },
+      {
+        title: "Delilah",
+        description: "A glamorous supper club bringing old-Hollywood dining and entertainment to Brickell, with live performances and a curated menu in a lavish setting."
       }
     ],
     mattsTake: [
-      "Brickell is Miami's engine. If you want to be at the center of everything, professionally and socially, this is the neighborhood. The energy here is unlike anywhere else in the city, and it only keeps growing.",
-      "I work with a lot of young professionals and international buyers who are drawn to Brickell's lifestyle. The ability to walk to work, hit a world-class restaurant, and be home in an elevator ride is genuinely compelling. It's Manhattan-style living with Miami weather.",
-      "From a market perspective, Brickell inventory moves fast. The combination of strong rental demand, international buyer interest, and continuous development means well-priced units don't last long. If you're considering Brickell, I always advise being ready to act decisively."
+      "Brickell is Miami's New York on the water. If you want to live in the center of everything and enjoy the high-rise condo lifestyle, this is the neighborhood. The energy here is unmatched and the new-development condos are the highlight of the area that continue to draw new buyers to Miami.",
+      "I work with a lot of young professionals and retired buyers who are drawn to Brickell's lifestyle. The ability to walk to work, hit a world-class restaurant, and be home to enjoy the beautiful ocean views is genuinely compelling and hard to do outside of New York City. It's Manhattan-style living with Miami weather.",
+      "From a market perspective, Brickell inventory moves fast, especially with the new-developments. The combination of strong demand and international buyer interest creates a strong investment opportunity."
     ]
   },
   {
@@ -132,9 +144,9 @@ export const neighborhoods: Neighborhood[] = [
     tagline: "Miami's Original Neighborhood",
     heroImage: "https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=1920&q=80",
     description: [
-      "Coconut Grove is Miami's oldest continuously inhabited neighborhood, and it wears that history well. Founded in the 1800s, the Grove has a bohemian spirit, lush tropical canopy, and waterfront charm that set it apart from every other community in the city. It's where Miami's artistic and intellectual roots run deepest.",
-      "The neighborhood centers around CocoWalk, a recently reimagined open-air lifestyle center with boutique shopping, chef-driven dining, and a luxury cinema. Beyond the village center, Coconut Grove is defined by its tree-lined streets, historic estates, and proximity to Biscayne Bay.",
-      "The Grove is also home to some of Miami's most important cultural institutions, including the Vizcaya Museum and Gardens, The Barnacle Historic State Park, and the Coconut Grove Arts Festival. For families, the neighborhood offers top-rated schools and a safe, walkable environment with a strong sense of community."
+      "Coconut Grove is Miami's most historic neighborhood. The Grove has waterfront charm and a residential community feel, making it family friendly while still youthful.",
+      "The neighborhood centers around CocoWalk, a recently reimagined area with boutique shopping, dining, and bars. Beyond the village center, Coconut Grove is defined by its tree-lined streets, historic estates, and proximity to Biscayne Bay.",
+      "The Grove is also home to some of Miami's most important cultural institutions, including the Vizcaya Museum and Gardens and the Coconut Grove Arts Festival. For families, the neighborhood offers top-rated schools and a safe, walkable environment with a strong sense of community."
     ],
     whatToDo: [
       {
@@ -150,18 +162,22 @@ export const neighborhoods: Neighborhood[] = [
         description: "Coconut Grove is Miami's sailing capital. The Coral Reef Yacht Club and Coconut Grove Sailing Club offer access to Biscayne Bay for sailing, kayaking, and paddleboarding."
       },
       {
-        title: "Peacock Park & Bayfront",
-        description: "A beloved waterfront park perfect for picnics, outdoor yoga, and weekend farmers markets with views across Biscayne Bay."
+        title: "Regatta Grove",
+        description: "A vibrant waterfront park and event space along Biscayne Bay, perfect for outdoor dining, live music, and weekend events with stunning water views."
       },
       {
-        title: "Lulu in the Grove",
-        description: "A neighborhood favorite serving elevated American cuisine in a warm, inviting setting. Known for its excellent wine list and lively brunch."
+        title: "Coconut Grove Farmers Market",
+        description: "A beloved weekend tradition featuring local produce, artisan goods, and prepared foods in an open-air setting. A great way to experience the Grove's community spirit."
+      },
+      {
+        title: "Anatomy",
+        description: "One of Miami's premier boutique gyms, offering state-of-the-art equipment and classes in a beautifully designed space that has become a social hub for the Grove community."
       }
     ],
     mattsTake: [
-      "Coconut Grove is the neighborhood I recommend to clients who want a real sense of place. It's not manufactured or trendy; it has genuine history and character. When you walk through the Grove, you can feel the roots.",
-      "For families, the Grove is hard to beat. The schools are strong, the streets are safe and shaded, and there's a real community here. Kids ride bikes, neighbors know each other, and the pace of life is a little slower, in the best possible way.",
-      "The real estate in the Grove ranges from historic waterfront estates to modern new construction. What makes it special from an investment standpoint is the scarcity. There's very little developable land left, which means existing homes, especially those on the water, will only become more valuable over time."
+      "Coconut Grove is the neighborhood I recommend to clients who want a strong, family-friendly place to live. When you walk through the Grove, you can feel the roots.",
+      "The Grove is family friendly and there's a real community here. Neighbors know each other and the pace of life is slower. The Grove has a European feel which attracts a lot of buyers.",
+      "The real estate in the Grove ranges from historic waterfront estates to modern new construction. Billionaires are flocking to the Grove to establish themselves. The area will only become more valuable over time and is a great place to raise a family."
     ]
   },
   {
@@ -170,9 +186,9 @@ export const neighborhoods: Neighborhood[] = [
     tagline: "America's Wealthiest Zip Code",
     heroImage: "https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920&q=80",
     description: [
-      "Fisher Island is a 216-acre private island located just south of Miami Beach, accessible only by ferry, helicopter, or private yacht. With a population of fewer than 800 residents, it is one of the most exclusive residential communities in the world, consistently ranked among America's wealthiest zip codes.",
-      "The island features a private beach club, a world-class golf course, a deep-water marina, multiple restaurants, a spa, tennis courts, and an observatory. Every amenity is designed for residents only, creating an environment of total privacy and exclusivity that is virtually impossible to replicate.",
-      "Residences on Fisher Island range from elegant condominiums to grand single-family estates, many with direct ocean or bay views. The architecture reflects a timeless Mediterranean and tropical modern aesthetic, and the landscaping throughout the island is meticulously maintained."
+      "Fisher Island is a 216-acre private island located just south of Miami Beach, accessible only by ferry. With a population of fewer than 1000 residents, it is one of the most exclusive residential communities in the world, consistently ranked among America's wealthiest zip codes. Most residents use Fisher Island as their second or third home, drawn by the unmatched privacy it offers.",
+      "The island features a private beach club, a world-class golf course, a deep-water marina, multiple restaurants, a spa, and tennis courts. Every amenity is designed for residents only, creating an environment of privacy and exclusivity.",
+      "Residences on Fisher Island range from elegant condominiums to grand single-family estates, many with direct ocean or bay views. The island is also home to one of the top-rated private schools in South Florida, making it a surprisingly wonderful choice for families looking for a secure, world-class environment to raise children."
     ],
     whatToDo: [
       {
@@ -198,8 +214,7 @@ export const neighborhoods: Neighborhood[] = [
     ],
     mattsTake: [
       "Fisher Island is in a category of its own. There's nowhere else in Miami, or frankly in the country, that offers this level of privacy, security, and exclusivity. When I bring clients over on the ferry for the first time, the reaction is always the same: they can't believe this exists just minutes from South Beach.",
-      "The community on Fisher Island is genuinely special. Because it's so small and private, residents actually know each other. There's a neighborly quality that you wouldn't expect in a place of this caliber. It's a real community, just an extraordinarily exclusive one.",
-      "From a real estate perspective, Fisher Island inventory is extremely limited. Properties rarely come to market, and when they do, they move quickly. I've handled numerous transactions on the island, and I can tell you that buying here is as much about relationships and access as it is about the property itself. If Fisher Island is on your radar, reach out early."
+      "The community on Fisher Island is genuinely special. Because it's so small and private, residents actually know each other. There's a neighborly quality that you wouldn't expect in a place of this caliber. It's a real community, just an extraordinarily exclusive one."
     ]
   },
   {
@@ -208,9 +223,9 @@ export const neighborhoods: Neighborhood[] = [
     tagline: "The City Beautiful",
     heroImage: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80",
     description: [
-      "Coral Gables, known as 'The City Beautiful,' is one of South Florida's most distinguished communities. Founded in the 1920s by George Merrick, the city is defined by its Mediterranean Revival architecture, tree-lined boulevards, and meticulous urban planning. It remains one of the most desirable residential addresses in the Miami area.",
-      "The neighborhood is anchored by the iconic Biltmore Hotel, a National Historic Landmark, and the Venetian Pool, a stunning spring-fed swimming hole carved from coral rock. Miracle Mile, the city's main commercial corridor, features boutique shopping, fine dining, and art galleries that reflect the community's cultivated character.",
-      "Residential offerings in Coral Gables range from historic Mediterranean estates on sprawling lots to modern new construction. The area is home to the University of Miami and boasts some of the best public and private schools in the state, making it a top choice for families seeking both prestige and quality of life."
+      "Coral Gables is one of South Florida's most distinguished communities. It remains one of the most desired residential addresses in Miami due to its all-encompassing neighborhood feel. It's family friendly with nearby parks, recreation, walkable streets, and shops along with the restaurants on Miracle Mile and the historic Biltmore Hotel for golf, tennis, and events.",
+      "The neighborhood is anchored by the iconic Biltmore Hotel, a National Historic Landmark. Miracle Mile is the city's main commercial corridor, featuring boutique shopping, fine dining, and art galleries that reflect the community's cultivated character.",
+      "Residential offerings in Coral Gables range from historic Mediterranean estates on sprawling lots to modern new construction condos. The area is home to the University of Miami and boasts some of the best public and private schools in the state, making it a top choice for families seeking both prestige and quality of life."
     ],
     whatToDo: [
       {
@@ -218,16 +233,20 @@ export const neighborhoods: Neighborhood[] = [
         description: "A landmark 1926 hotel featuring a world-class golf course, spa, and stunning architecture. The Sunday brunch is a Coral Gables institution."
       },
       {
-        title: "Venetian Pool",
-        description: "A spring-fed public swimming pool carved from a coral rock quarry in 1924. One of the most beautiful and unique pools in the country."
+        title: "Shops at Merrick Park",
+        description: "An upscale open-air mall featuring luxury retailers, fine dining, and boutique shops in a beautiful Mediterranean-inspired setting."
       },
       {
-        title: "Miracle Mile & Shops at Merrick Park",
-        description: "Upscale shopping and dining along Coral Gables' main commercial streets, featuring everything from Nordstrom to locally owned boutiques and restaurants."
+        title: "Miracle Mile",
+        description: "Coral Gables' charming main street lined with boutique shops, acclaimed restaurants, and wine bars. A walkable destination that defines the neighborhood's character."
       },
       {
         title: "Fairchild Tropical Botanic Garden",
         description: "An 83-acre tropical garden showcasing rare plants, butterfly exhibits, and world-class horticultural collections along Biscayne Bay."
+      },
+      {
+        title: "Equinox",
+        description: "A world-class Equinox gym conveniently located in Coral Gables, offering premium fitness facilities and classes for residents who prioritize wellness."
       },
       {
         title: "Riviera Country Club",
@@ -235,8 +254,8 @@ export const neighborhoods: Neighborhood[] = [
       }
     ],
     mattsTake: [
-      "Coral Gables is where I send clients who want a sense of permanence and prestige. The architecture, the tree canopy, the wide boulevards — everything here was designed with intention. It's one of the few places in Miami that feels like it was built to last.",
-      "For families, Coral Gables is exceptional. The schools are among the best in Miami-Dade County, the streets are safe and beautifully maintained, and there's a genuine sense of community. It's the kind of place where kids grow up riding bikes to the Venetian Pool.",
+      "Coral Gables is where I send clients who want a sense of permanence and prestige. The architecture, the tree canopy, the wide boulevards — everything here was designed with intention.",
+      "For families, Coral Gables is exceptional. The schools are among the best in Miami-Dade County, the streets are safe and beautifully maintained, and there's a genuine sense of community. It's the kind of place where kids grow up riding bikes followed by a dinner on Miracle Mile.",
       "From a real estate standpoint, Coral Gables has incredible staying power. The strict zoning, architectural standards, and limited inventory mean that values here are remarkably stable. Historic estates on large lots are increasingly rare, and new construction in prime locations commands top dollar. If you're looking for a legacy property in Miami, Coral Gables should be on your list."
     ]
   }
