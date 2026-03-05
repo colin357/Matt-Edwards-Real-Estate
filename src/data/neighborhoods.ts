@@ -4,6 +4,8 @@ export interface Neighborhood {
   tagline: string;
   heroImage: string;
   description: string[];
+  videoUrl?: string;
+  videoIsShort?: boolean;
   whatToDo: {
     title: string;
     description: string;
@@ -22,6 +24,8 @@ export const neighborhoods: Neighborhood[] = [
       "The neighborhood is defined by its world-class condominium towers, including Apogee, Continuum, and Murano Grande, which offer panoramic views and resort-style amenities. Tree-lined streets, art deco architecture, and a walkable layout give SoFi a village-like feel that sets it apart from the rest of Miami Beach.",
       "South Pointe Park, at the very tip of the island, is one of Miami's most beautiful green spaces, offering views of cruise ships, Fisher Island, and the downtown skyline. SoFi is where Miami's most discerning residents choose to call home."
     ],
+    videoUrl: "https://www.youtube.com/embed/OZ_iOjluN6Y",
+    videoIsShort: true,
     whatToDo: [
       {
         title: "South Pointe Park",
@@ -148,6 +152,8 @@ export const neighborhoods: Neighborhood[] = [
       "The neighborhood centers around CocoWalk, a recently reimagined area with boutique shopping, dining, and bars. Beyond the village center, Coconut Grove is defined by its tree-lined streets, historic estates, and proximity to Biscayne Bay.",
       "The Grove is also home to some of Miami's most important cultural institutions, including the Vizcaya Museum and Gardens and the Coconut Grove Arts Festival. For families, the neighborhood offers top-rated schools and a safe, walkable environment with a strong sense of community."
     ],
+    videoUrl: "https://www.youtube.com/embed/MSi7N3Zs0To",
+    videoIsShort: true,
     whatToDo: [
       {
         title: "Vizcaya Museum & Gardens",
@@ -190,6 +196,7 @@ export const neighborhoods: Neighborhood[] = [
       "The island features a private beach club, a world-class golf course, a deep-water marina, multiple restaurants, a spa, and tennis courts. Every amenity is designed for residents only, creating an environment of privacy and exclusivity.",
       "Residences on Fisher Island range from elegant condominiums to grand single-family estates, many with direct ocean or bay views. The island is also home to one of the top-rated private schools in South Florida, making it a surprisingly wonderful choice for families looking for a secure, world-class environment to raise children."
     ],
+    videoUrl: "https://www.youtube.com/embed/vbNVlaWzjks",
     whatToDo: [
       {
         title: "Fisher Island Beach Club",
@@ -227,6 +234,8 @@ export const neighborhoods: Neighborhood[] = [
       "The neighborhood is anchored by the iconic Biltmore Hotel, a National Historic Landmark. Miracle Mile is the city's main commercial corridor, featuring boutique shopping, fine dining, and art galleries that reflect the community's cultivated character.",
       "Residential offerings in Coral Gables range from historic Mediterranean estates on sprawling lots to modern new construction condos. The area is home to the University of Miami and boasts some of the best public and private schools in the state, making it a top choice for families seeking both prestige and quality of life."
     ],
+    videoUrl: "https://www.youtube.com/embed/lMwvevFSfxk",
+    videoIsShort: true,
     whatToDo: [
       {
         title: "Biltmore Hotel",
