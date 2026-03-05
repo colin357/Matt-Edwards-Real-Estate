@@ -137,6 +137,16 @@ export default async function ListingPage({ params }: Props) {
                 <p className="text-lg text-[var(--muted)]">
                   {listing.address}, {listing.neighborhood}
                 </p>
+                <div className="flex items-center gap-2 mt-3">
+                  <Image
+                    src="/images/Luxe Living.png"
+                    alt="Luxe Living Realty"
+                    width={24}
+                    height={24}
+                    className="h-6 w-auto"
+                  />
+                  <span className="text-sm text-[var(--muted)]">Listed by Dora Puig</span>
+                </div>
               </div>
 
               {/* Stats */}
