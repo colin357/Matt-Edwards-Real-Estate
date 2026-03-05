@@ -79,7 +79,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-xs">
-            &copy; {new Date().getFullYear()} Matt Edwards Real Estate. All rights reserved.
+            &copy; {new Date().getFullYear()} Matt Edwards Real Estate. All rights reserved. FL MLS #36425
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-500 hover:text-white transition-colors" aria-label="Instagram">
