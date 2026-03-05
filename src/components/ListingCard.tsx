@@ -89,7 +89,17 @@ export default function ListingCard({ listing, featured = false }: ListingCardPr
           )}
 
           {/* View Details Link */}
-          <div className="mt-4 pt-4 border-t border-gray-100">
+          <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/images/Luxe Living.png"
+                alt="Luxe Living Realty"
+                width={20}
+                height={20}
+                className="h-5 w-auto"
+              />
+              <span className="text-[10px] text-[var(--muted)] tracking-wide">Listed by Dora Puig</span>
+            </div>
             <span className="text-xs uppercase tracking-wider text-[var(--charcoal)] group-hover:text-[var(--gold)] transition-colors flex items-center">
               View Property
               <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

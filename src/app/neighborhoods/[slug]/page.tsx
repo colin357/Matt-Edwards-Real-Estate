@@ -78,6 +78,23 @@ export default async function NeighborhoodPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Neighborhood Video */}
+      {neighborhood.videoUrl && (
+        <section className="py-16 bg-[var(--cream)]">
+          <div className={`mx-auto px-6 lg:px-8 ${neighborhood.videoIsShort ? 'max-w-sm' : 'max-w-4xl'}`}>
+            <div className={`relative overflow-hidden shadow-lg ${neighborhood.videoIsShort ? 'aspect-[9/16]' : 'aspect-video'}`}>
+              <iframe
+                src={`${neighborhood.videoUrl}?rel=0`}
+                title={`${neighborhood.name} Video`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* What To Do */}
       <section className="py-20 bg-[var(--cream)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
