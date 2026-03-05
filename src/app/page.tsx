@@ -67,7 +67,7 @@ export default function Home() {
                   src="/images/headshot.webp"
                   alt="Miami luxury real estate"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               {/* Decorative Element */}
