@@ -41,7 +41,7 @@ export default function Home() {
               <Link href="#listings" className="bg-white text-[var(--charcoal)] border border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-10 py-4 font-medium tracking-[0.05em] uppercase text-sm transition-all duration-300">
                 View Listings
               </Link>
-              <Link href="#contact" className="btn-secondary bg-transparent text-white border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-8 py-4 text-sm">
+              <Link href="#contact" className="bg-transparent text-white border border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-8 py-4 font-medium tracking-[0.05em] uppercase text-sm transition-all duration-300">
                 Call Me
               </Link>
             </div>
@@ -90,7 +90,7 @@ export default function Home() {
                   What sets Matt apart is his commitment to modern marketing and personalized service, to drive eyes to your property and increase its future sale value.
                 </p>
                 <p>
-                  Matt knows Miami inside and out and can provide locals-only information and experiences. From the historic estates of Coral Gables to the sleek penthouses of Brickell, from the exclusive enclaves of Fisher Island to the vibrant streets of Coconut Grove, his intimate knowledge of each neighborhood ensures clients find not just a property, but the perfect lifestyle.
+                  Matt knows Miami inside and out and can provide locals-only information and experiences. From the historic estates of Coral Gables to the sleek penthouses of Brickell, from the exclusive enclaves of Fisher Island to the vibrant streets of Coconut Grove, to Miami Beach and his own neighborhoods in South of Fifth, his intimate knowledge of each neighborhood ensures clients find not just a property, but the perfect lifestyle.
                 </p>
               </div>
             </div>
