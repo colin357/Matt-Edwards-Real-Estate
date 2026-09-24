@@ -1,403 +1,403 @@
 import Image from "next/image";
 import Link from "next/link";
-import ListingCard from "@/components/ListingCard";
-import { getFeaturedListings } from "@/data/listings";
+import LeadForm from "@/components/LeadForm";
+import ListingCarousel from "@/components/ListingCarousel";
+import { Icon } from "@/components/SocialIcons";
+import { getListingImages, listings } from "@/data/listings";
+import { neighborhoods } from "@/data/neighborhoods";
+import { site } from "@/lib/site";
+
+const serif = { fontFamily: "var(--font-heading)" };
+
+const marketingPillars = [
+  {
+    title: "Cinematic Video",
+    copy: "Story-driven property films and virtual tours that let buyers across the country and around the world experience a home before they fly in.",
+  },
+  {
+    title: "Photography & Drone",
+    copy: "Architectural photography and aerial footage that capture the light, the water and the lifestyle that make a Miami property exceptional.",
+  },
+  {
+    title: "Targeted Digital",
+    copy: "Precision social and digital campaigns that put your property in front of qualified, high-net-worth buyers where they already spend their time.",
+  },
+  {
+    title: "Global Network",
+    copy: "Relationships with luxury agents, private buyers and developers that extend your listing's reach well beyond the MLS.",
+  },
+];
+
+const videos = [
+  { id: "qMcIVQBrKuo", title: "Meet Matt Edwards" },
+  { id: "vbNVlaWzjks", title: "Luxury Real Estate Marketing" },
+  { id: "MSi7N3Zs0To", title: "Coconut Grove Neighborhood Tour" },
+  { id: "lMwvevFSfxk", title: "Coral Gables Neighborhood Tour" },
+];
 
 export default function Home() {
-  const featuredListings = getFeaturedListings();
+  const sortedListings = [...listings].sort((a, b) => b.price - a.price);
+
+  const carouselListings = sortedListings.map((l) => ({
+    slug: l.slug,
+    title: l.title,
+    neighborhood: l.neighborhood,
+    priceFormatted: l.priceFormatted,
+    propertyType: l.propertyType,
+    bedrooms: l.bedrooms,
+    bathrooms: l.bathrooms,
+    sqftFormatted: l.sqftFormatted,
+    image: getListingImages(l)[0],
+  }));
+
+  const chips = [
+    ...neighborhoods.map((n) => ({ label: n.name, href: `/neighborhoods/${n.slug}` })),
+    { label: "Venetian Islands", href: "/listings" },
+    { label: "Waterfront Estates", href: "/listings" },
+    { label: "Luxury Condos", href: "/south-of-fifth-condos" },
+  ];
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative h-screen min-h-[700px] flex items-center">
-        {/* Background Video */}
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-            poster="https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920"
-          >
-            <source src="https://assets.mixkit.co/videos/24555/24555-720.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4 animate-fade-in">
-              Miami Luxury Real Estate
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold leading-tight mb-6 animate-fade-in delay-100" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Exceptional Lifestyle Properties for High-Net Worth Clients
-            </h1>
-            <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed animate-fade-in delay-200">
-              Experience Miami&apos;s exclusive properties from a local&apos;s-only perspective.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-300">
-              <Link href="#listings" className="bg-white text-[var(--charcoal)] border border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-10 py-4 font-medium tracking-[0.05em] uppercase text-sm transition-all duration-300">
-                View Listings
-              </Link>
-              <Link href="#contact" className="bg-transparent text-white border border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-8 py-4 font-medium tracking-[0.05em] uppercase text-sm transition-all duration-300">
-                Call Me
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      {/* ---------- Hero: full-bleed aerial video ---------- */}
+      <section className="relative h-[92vh] min-h-[620px] bg-black">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920"
+        >
+          <source src="https://assets.mixkit.co/videos/24555/24555-720.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[var(--ink)] to-transparent" />
+        <a
+          href="#intro"
+          aria-label="Scroll to introduction"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/80 hover:text-white animate-bounce"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </div>
+        </a>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 bg-[var(--cream)]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Image */}
-            <div className="relative">
-              <div className="relative h-[500px] lg:h-[600px]">
-                <Image
-                  src="/images/headshot.webp"
-                  alt="Miami luxury real estate"
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
-              {/* Decorative Element */}
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 border-2 border-[var(--gold)] hidden lg:block" />
-            </div>
-
-            {/* Content */}
-            <div>
-              <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4">
-                About
-              </p>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[var(--charcoal)] mb-6 gold-underline" style={{ fontFamily: 'var(--font-playfair)' }}>
-                Matt Edwards
-              </h2>
-              <div className="space-y-4 text-[var(--muted)] leading-relaxed">
-                <p>
-                  Matt Edwards is a luxury real estate professional serving high-end buyers and sellers throughout Miami. With deep expertise in the local market, Matt specializes in residential, waterfront, and lifestyle-driven properties for clients who expect precision, privacy, and performance.
-                </p>
-                <p>
-                  What sets Matt apart is his commitment to modern marketing and personalized service, to drive eyes to your property and increase its future sale value.
-                </p>
-                <p>
-                  Matt knows Miami inside and out and can provide locals-only information and experiences. From the historic estates of Coral Gables to the sleek penthouses of Brickell, from the exclusive enclaves of Fisher Island to the vibrant streets of Coconut Grove, to Miami Beach and his own neighborhoods in South of Fifth, his intimate knowledge of each neighborhood ensures clients find not just a property, but the perfect lifestyle.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* VSL Video */}
-          <div className="mt-16">
-            <div className="relative aspect-video max-w-4xl mx-auto bg-gray-100 overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.youtube.com/embed/qMcIVQBrKuo?rel=0"
-                title="Matt Edwards - Miami Luxury Real Estate"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
+      {/* ---------- Intro: portrait + bio ---------- */}
+      <section
+        id="intro"
+        className="relative text-white overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(ellipse at 20% 30%, rgba(26,77,148,0.55) 0%, rgba(8,31,69,0.9) 40%, #080f1e 75%, #0a0a0a 100%)",
+        }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-12">
+          {/* Portrait */}
+          <div className="lg:col-span-5 flex flex-col">
+            <div className="relative h-[520px] lg:h-auto lg:flex-1 lg:min-h-[640px]">
+              <Image
+                src="/images/headshot.webp"
+                alt="Matt Edwards, Miami luxury real estate advisor"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover object-top"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#081f45]/70 via-transparent to-transparent" />
+            </div>
+          </div>
+
+          {/* Copy */}
+          <div className="lg:col-span-7 px-6 sm:px-10 lg:px-14 xl:px-20 py-16 lg:py-24 flex flex-col justify-center">
+            <p className="text-[0.68rem] tracking-[0.35em] uppercase text-[var(--navy-light)] mb-6">
+              {site.brokerage} · Miami Beach
+            </p>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl uppercase tracking-[0.06em] leading-none" style={serif}>
+              Matt Edwards
+            </h1>
+            <p className="mt-5 text-xl sm:text-2xl italic tracking-[0.08em] text-gray-400" style={serif}>
+              Miami Luxury Specialist — Waterfront, Island &amp; Lifestyle Properties
+            </p>
+
+            <div className="mt-10 space-y-5 text-[0.95rem] leading-[1.9] text-gray-300 max-w-3xl">
+              <p>
+                Matt Edwards is a luxury real estate professional serving high-end buyers and sellers throughout Miami —
+                from the private shores of <em className="text-white">Fisher Island</em> to the bayfront estates of the{" "}
+                <em className="text-white">Venetian Islands</em> and the boutique towers of{" "}
+                <em className="text-white">South of Fifth</em>, the neighborhood he calls home.
+              </p>
+              <p>
+                He specializes in residential, waterfront and lifestyle-driven properties for clients who expect
+                precision, privacy and performance, pairing a local&apos;s-only perspective with modern, video-first
+                marketing that drives eyes to your property and increases its future sale value.
+              </p>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-2">
+              {chips.map((c) => (
+                <Link key={c.label} href={c.href} className="tag-chip">
+                  {c.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-3">
+              <Link href="#about" className="btn-navy">
+                Meet Matt <span aria-hidden="true">→</span>
+              </Link>
+              <Link href="#contact" className="btn-navy">
+                Contact <Icon name="email" className="w-3 h-3" />
+              </Link>
+              <Link href="/listings" className="btn-outline-light">
+                View Listings
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Listings Section */}
-      <section id="listings" className="py-24 bg-white">
+      {/* ---------- Exclusive listings carousel ---------- */}
+      <section id="listings" className="bg-[var(--cream)] py-20">
+        <div className="text-center mb-12 px-6">
+          <p className="eyebrow">Exclusive Listings</p>
+          <h2 className="section-title text-4xl md:text-5xl text-[var(--ink)] mt-5">Featured Properties</h2>
+        </div>
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-12">
+          <ListingCarousel listings={carouselListings} />
+        </div>
+        <div className="text-center mt-12">
+          <Link href="/listings" className="btn-outline-dark">
+            View All Listings
+          </Link>
+        </div>
+      </section>
+
+      {/* ---------- Marketing band (dark) ---------- */}
+      <section id="marketing" className="bg-[var(--ink)] text-white border-y border-[var(--navy)] py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Section Header */}
           <div className="text-center mb-16">
-            <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4">
-              Portfolio
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-[var(--charcoal)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Featured Properties
-            </h2>
-            <p className="text-[var(--muted)] max-w-2xl mx-auto">
-              A curated selection of Miami&apos;s most exceptional residences, each representing the pinnacle of luxury living.
+            <p className="eyebrow eyebrow-on-dark">Modern Marketing</p>
+            <h2 className="section-title text-4xl md:text-6xl mt-5">White-Glove Marketing</h2>
+            <p className="mt-6 max-w-3xl mx-auto text-gray-400 leading-relaxed">
+              70% of buyers say video footage of a listing helps them make a decision — especially when making a
+              long-distance move. With Miami&apos;s buyers arriving from across the country and around the world, every
+              property Matt represents is presented for the modern era.
             </p>
           </div>
-
-          {/* Featured Listings Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {featuredListings.slice(0, 4).map((listing) => (
-              <ListingCard key={listing.id} listing={listing} featured />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {marketingPillars.map((p, i) => (
+              <div
+                key={p.title}
+                className="border border-white/10 border-t-2 border-t-[var(--navy)] bg-white/[0.02] p-8 hover:bg-white/[0.05] transition-colors"
+              >
+                <p className="text-4xl text-[var(--navy-light)]" style={serif}>
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-4 text-[0.72rem] font-semibold tracking-[0.25em] uppercase">{p.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-gray-400">{p.copy}</p>
+              </div>
             ))}
           </div>
-
-          {/* View All Listings */}
-          <div className="text-center">
-            <Link href="/listings" className="btn-secondary inline-block">
-              View All Listings
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Video Marketing Section */}
-      <section className="relative py-24 text-white overflow-hidden">
-        {/* Ocean Background with blur and dark tint */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80"
-            alt=""
-            fill
-            className="object-cover blur-[2px]"
-          />
-          <div className="absolute inset-0 bg-black/40" />
+      {/* ---------- Showcase communities mosaic ---------- */}
+      <section id="communities" className="bg-[var(--cream)] pt-20">
+        <div className="text-center mb-12 px-6">
+          <p className="eyebrow">Explore the Area</p>
+          <h2 className="section-title text-4xl md:text-5xl text-[var(--ink)] mt-5">Showcase Communities</h2>
         </div>
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-2">
+          {neighborhoods.map((n, i) => {
+            const span =
+              i === 0
+                ? "col-span-2 lg:col-span-6 h-[260px] lg:h-[340px]"
+                : i < 3
+                  ? "col-span-1 lg:col-span-3 h-[200px] lg:h-[340px]"
+                  : "col-span-1 lg:col-span-4 h-[200px] lg:h-[260px]";
+            return (
+              <Link key={n.slug} href={`/neighborhoods/${n.slug}`} className={`group relative overflow-hidden ${span}`}>
+                <Image
+                  src={n.heroImage}
+                  alt={n.name}
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent group-hover:from-[#081f45]/80 transition-colors" />
+                <span
+                  className="absolute left-5 bottom-5 text-white text-xl lg:text-2xl uppercase tracking-[0.1em]"
+                  style={serif}
+                >
+                  {n.name}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Content */}
-            <div>
-              <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4">
-                Modern Marketing
-              </p>
-              <h2 className="text-3xl md:text-4xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
-                Properties Presented for the Modern Era
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                In today&apos;s market, exceptional properties deserve exceptional video presentation. 70% of buyers say that video footage of a listing helps them make a decision, especially when making a long-distance move. This becomes incredibly important due to Miami's diverse population of homebuyers from across the United States and internationally. Matt leverages cutting-edge video production, cinematic photography, and strategic digital marketing to ensure your property reaches qualified buyers worldwide.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0 font-medium">&mdash;</span>
-                  <span className="text-gray-300">Cinematic property videos and virtual tours</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0 font-medium">&mdash;</span>
-                  <span className="text-gray-300">Professional photography and drone footage</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0 font-medium">&mdash;</span>
-                  <span className="text-gray-300">Targeted social media and digital campaigns</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[var(--gold)] mr-3 mt-0.5 flex-shrink-0 font-medium">&mdash;</span>
-                  <span className="text-gray-300">Global network of luxury real estate connections</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* YouTube Video */}
-            <div className="relative">
-              <div className="relative aspect-video bg-gray-800 overflow-hidden">
+      {/* ---------- Watch & explore ---------- */}
+      <section className="bg-[var(--cream)] py-20 border-t border-gray-200">
+        <div className="text-center mb-12 px-6">
+          <p className="eyebrow">Watch &amp; Explore</p>
+          <h2 className="section-title text-4xl md:text-5xl text-[var(--ink)] mt-5">YouTube</h2>
+        </div>
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {videos.map((v) => (
+            <div key={v.id}>
+              <div className="relative aspect-video bg-black overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/vbNVlaWzjks?rel=0"
-                  title="Matt Edwards - Luxury Real Estate Marketing"
+                  src={`https://www.youtube.com/embed/${v.id}?rel=0`}
+                  title={v.title}
+                  loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="absolute inset-0 w-full h-full"
                 />
               </div>
+              <p className="mt-3 text-sm font-medium text-[var(--ink)]">{v.title}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------- About + portfolio ledger ---------- */}
+      <section id="about" className="bg-white py-24">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <p className="text-[0.62rem] font-semibold tracking-[0.35em] uppercase text-[var(--navy)]">About Matt Edwards</p>
+            <h2 className="mt-4 text-3xl md:text-4xl uppercase leading-tight text-[var(--ink)]" style={serif}>
+              A Local&apos;s Perspective on Miami Luxury
+            </h2>
+            <div className="mt-6 pt-6 border-t border-gray-200 space-y-5 text-[0.95rem] leading-[1.9] text-[var(--muted)]">
+              <p className="italic">
+                Written by Matt Edwards — Miami luxury real estate advisor with {site.brokerage}.
+              </p>
+              <p>
+                Matt knows Miami inside and out and can provide locals-only information and experiences. From the
+                historic estates of <strong className="text-[var(--ink)]">Coral Gables</strong> to the sleek penthouses of{" "}
+                <strong className="text-[var(--ink)]">Brickell</strong>, from the exclusive enclave of{" "}
+                <strong className="text-[var(--ink)]">Fisher Island</strong> to the vibrant streets of{" "}
+                <strong className="text-[var(--ink)]">Coconut Grove</strong>, to Miami Beach and his own neighborhood in{" "}
+                <strong className="text-[var(--ink)]">South of Fifth</strong>, his intimate knowledge of each
+                neighborhood ensures clients find not just a property, but the perfect lifestyle.
+              </p>
+              <p>
+                What sets Matt apart is his commitment to modern marketing and personalized service — cinematic video,
+                professional photography and targeted digital campaigns that drive eyes to your property and increase its
+                future sale value.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-[0.62rem] font-semibold tracking-[0.35em] uppercase text-[var(--navy)]">The Portfolio</p>
+            <h2 className="mt-4 text-3xl md:text-4xl uppercase leading-tight text-[var(--ink)]" style={serif}>
+              Signature Properties Across Miami
+            </h2>
+            <ul className="mt-6 border-t border-gray-200">
+              {sortedListings.map((l) => (
+                <li key={l.slug} className="border-b border-gray-200">
+                  <Link href={`/listings/${l.slug}`} className="group flex items-center justify-between gap-4 py-4">
+                    <span className="text-2xl text-[var(--navy)]" style={serif}>
+                      {l.priceFormatted}
+                    </span>
+                    <span className="text-xs tracking-wider text-[var(--charcoal-light)] text-right group-hover:text-[var(--navy)] transition-colors">
+                      {l.title}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 italic text-sm leading-relaxed text-[var(--muted)]">
+              Matt prides himself on being his clients&apos; biggest advocate — always prioritizing their interests
+              above all else, with integrity, discretion and a willingness to go beyond the transaction.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Neighborhoods Section */}
-      <section id="neighborhoods" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4">
-              Expertise
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-[var(--charcoal)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Miami Neighborhoods
-            </h2>
-            <p className="text-[var(--muted)] max-w-2xl mx-auto">
-              From historic estates to modern penthouses, Matt&apos;s expertise spans Miami&apos;s most sought-after communities.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {[
-              { name: 'South of Fifth', slug: 'south-of-fifth', image: 'https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=600' },
-              { name: 'Fisher Island', slug: 'fisher-island', image: 'https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=600' },
-              { name: 'Brickell', slug: 'brickell', image: 'https://images.unsplash.com/photo-1704080864842-2577d94ebb1c?w=600' },
-              { name: 'Coconut Grove', slug: 'coconut-grove', image: 'https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=600' },
-              { name: 'Coral Gables', slug: 'coral-gables', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600' },
-            ].map((neighborhood) => (
-              <Link key={neighborhood.name} href={`/neighborhoods/${neighborhood.slug}`} className="group relative h-48 overflow-hidden block">
-                <Image
-                  src={neighborhood.image}
-                  alt={neighborhood.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-sm font-medium tracking-wide text-center px-2">
-                    {neighborhood.name}
-                  </span>
-                </div>
+      {/* ---------- Numbered neighborhood guide ---------- */}
+      <section className="bg-[var(--cream)] py-24">
+        <div className="text-center mb-14 px-6">
+          <p className="eyebrow">Neighborhood Guide</p>
+          <h2 className="section-title text-4xl md:text-5xl text-[var(--ink)] mt-5">Where Matt Works</h2>
+        </div>
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200">
+            {neighborhoods.map((n, i) => (
+              <Link key={n.slug} href={`/neighborhoods/${n.slug}`} className="group bg-white p-8 lg:p-10 hover:bg-[#fafaf8] transition-colors">
+                <p className="text-4xl text-gray-300 group-hover:text-[var(--navy)] transition-colors" style={serif}>
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-2 text-[0.72rem] font-semibold tracking-[0.25em] uppercase text-[var(--ink)]">{n.name}</h3>
+                <p className="mt-1 text-sm italic text-[var(--navy)]" style={serif}>
+                  {n.tagline}
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] line-clamp-5">{n.description[0]}</p>
+                <span className="mt-5 inline-block text-[0.62rem] tracking-[0.25em] uppercase text-[var(--ink)] group-hover:text-[var(--navy)]">
+                  Explore <span aria-hidden="true">→</span>
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-24 bg-[var(--cream)]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Info */}
-            <div>
-              <p className="text-[var(--gold)] text-sm tracking-[0.3em] uppercase mb-4">
-                Get in Touch
-              </p>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[var(--charcoal)] mb-8" style={{ fontFamily: 'var(--font-playfair)' }}>
-                Let&apos;s Discuss Your Real Estate Goals
-              </h2>
-
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-[var(--charcoal)] flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-[var(--gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm text-[var(--muted)] uppercase tracking-wide">Phone</p>
-                    <a href="tel:+12148860363" className="text-[var(--charcoal)] font-medium hover:text-[var(--gold)] transition-colors">
-                      (214) 886-0363
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-[var(--charcoal)] flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-[var(--gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm text-[var(--muted)] uppercase tracking-wide">Email</p>
-                    <a href="mailto:matt@luxelivingmiami.com" className="text-[var(--charcoal)] font-medium hover:text-[var(--gold)] transition-colors">
-                      matt@luxelivingmiami.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-[var(--charcoal)] flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-[var(--gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm text-[var(--muted)] uppercase tracking-wide">Location</p>
-                    <p className="text-[var(--charcoal)] font-medium">
-                      Miami, Florida
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="bg-white p-8 lg:p-10 shadow-lg">
-              <h3 className="text-xl font-semibold text-[var(--charcoal)] mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
-                Call Me
-              </h3>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      className="w-full px-4 py-3 border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition-colors"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      className="w-full px-4 py-3 border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition-colors"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-4 py-3 border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition-colors"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="interest" className="block text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
-                    I&apos;m Interested In
-                  </label>
-                  <select
-                    id="interest"
-                    name="interest"
-                    className="w-full px-4 py-3 border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition-colors bg-white"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="buying">Buying a Property</option>
-                    <option value="selling">Selling a Property</option>
-                    <option value="both">Both Buying &amp; Selling</option>
-                    <option value="consultation">General Consultation</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-xs uppercase tracking-wide text-[var(--muted)] mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition-colors resize-none"
-                  />
-                </div>
-
-                <button type="submit" className="btn-primary w-full">
-                  Send Message
-                </button>
-              </form>
-            </div>
+      {/* ---------- Contact ---------- */}
+      <section
+        id="contact"
+        className="py-24 text-white"
+        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #080f1e 45%, #0c3873 100%)" }}
+      >
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="eyebrow eyebrow-on-dark">Get in Touch</p>
+            <h2 className="section-title text-4xl md:text-5xl mt-5">Let&apos;s Discuss Your Real Estate Goals</h2>
+            <p className="mt-6 text-gray-400 leading-relaxed max-w-md">
+              Whether you&apos;re buying, selling or investing in Miami, Matt delivers a private, tailored experience from
+              first conversation to closing.
+            </p>
+            <ul className="mt-10 space-y-5">
+              <li>
+                <a href={site.phoneHref} className="flex items-center gap-4 hover:text-[var(--navy-light)] transition-colors">
+                  <span className="w-11 h-11 border border-white/20 flex items-center justify-center">
+                    <Icon name="phone" className="w-4 h-4" />
+                  </span>
+                  <span className="tracking-wider">{site.phone}</span>
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${site.email}`} className="flex items-center gap-4 hover:text-[var(--navy-light)] transition-colors">
+                  <span className="w-11 h-11 border border-white/20 flex items-center justify-center">
+                    <Icon name="email" className="w-4 h-4" />
+                  </span>
+                  <span className="tracking-wider">{site.email}</span>
+                </a>
+              </li>
+              <li className="flex items-center gap-4">
+                <span className="w-11 h-11 border border-white/20 flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </span>
+                <span className="tracking-wider text-gray-300">
+                  {site.addressLine1}, {site.addressLine2}
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className="text-[var(--ink)]">
+            <LeadForm
+              eyebrow="Private Consultation"
+              title="Schedule a Conversation"
+              subtitle="Tell Matt what you're looking for and he'll be in touch personally."
+              buttonLabel="Send Message"
+              source="Homepage Contact"
+            />
           </div>
         </div>
       </section>
