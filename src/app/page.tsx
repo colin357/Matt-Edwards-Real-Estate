@@ -9,10 +9,6 @@ import { site } from "@/lib/site";
 
 const serif = { fontFamily: "var(--font-heading)" };
 
-function formatMillions(value: number) {
-  return `$${Math.floor(value / 1_000_000)}M+`;
-}
-
 const marketingPillars = [
   {
     title: "Cinematic Video",
@@ -41,8 +37,6 @@ const videos = [
 
 export default function Home() {
   const sortedListings = [...listings].sort((a, b) => b.price - a.price);
-  const portfolioValue = listings.reduce((sum, l) => sum + l.price, 0);
-  const topListing = sortedListings[0];
 
   const carouselListings = sortedListings.map((l) => ({
     slug: l.slug,
@@ -55,13 +49,6 @@ export default function Home() {
     sqftFormatted: l.sqftFormatted,
     image: getListingImages(l)[0],
   }));
-
-  const stats = [
-    { value: formatMillions(portfolioValue), label: "Featured Portfolio" },
-    { value: `${listings.length}`, label: "Exclusive Listings" },
-    { value: formatMillions(topListing.price).replace("+", ""), label: "Top Active Listing" },
-    { value: `${neighborhoods.length}`, label: "Signature Neighborhoods" },
-  ];
 
   const chips = [
     ...neighborhoods.map((n) => ({ label: n.name, href: `/neighborhoods/${n.slug}` })),
@@ -96,7 +83,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/* ---------- Intro: portrait + stats + bio ---------- */}
+      {/* ---------- Intro: portrait + bio ---------- */}
       <section
         id="intro"
         className="relative text-white overflow-hidden"
@@ -106,9 +93,9 @@ export default function Home() {
         }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-12">
-          {/* Portrait + stats */}
+          {/* Portrait */}
           <div className="lg:col-span-5 flex flex-col">
-            <div className="relative h-[520px] lg:h-[640px]">
+            <div className="relative h-[520px] lg:h-auto lg:flex-1 lg:min-h-[640px]">
               <Image
                 src="/images/headshot.webp"
                 alt="Matt Edwards, Miami luxury real estate advisor"
@@ -118,19 +105,6 @@ export default function Home() {
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#081f45]/70 via-transparent to-transparent" />
-            </div>
-            <div className="grid grid-cols-2 border-t border-[var(--navy)]">
-              {stats.map((s, i) => (
-                <div
-                  key={s.label}
-                  className={`py-6 text-center border-[var(--navy)] ${i % 2 === 0 ? "border-r" : ""} ${i < 2 ? "border-b" : ""}`}
-                >
-                  <p className="text-3xl" style={serif}>
-                    {s.value}
-                  </p>
-                  <p className="mt-1 text-[0.58rem] tracking-[0.25em] uppercase text-gray-400">{s.label}</p>
-                </div>
-              ))}
             </div>
           </div>
 
