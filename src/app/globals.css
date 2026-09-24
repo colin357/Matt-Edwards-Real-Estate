@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
-  --foreground: #1a1a1a;
-  --gold: #c9a962;
-  --gold-light: #d4b978;
-  --charcoal: #2d2d2d;
-  --charcoal-light: #404040;
-  --cream: #f5f3ef;
-  --muted: #737373;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  /* Accent (kept as --gold so existing pages pick up the new navy palette) */
+  --gold: #0c3873;
+  --gold-light: #6f9be0;
+  --navy: #0c3873;
+  --navy-deep: #081f45;
+  --navy-light: #6f9be0;
+  --ink: #0a0a0a;
+  --charcoal: #0a0a0a;
+  --charcoal-light: #292929;
+  --cream: #f4f4f2;
+  --muted: #5f5e5e;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-playfair: 'Cormorant Garamond', Georgia, serif;
   --font-heading: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
 }
 
 @theme inline {
@@ -23,6 +29,10 @@
   --color-charcoal-light: var(--charcoal-light);
   --color-cream: var(--cream);
   --color-muted: var(--muted);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-light: var(--navy-light);
+  --color-ink: var(--ink);
 }
 
 body {
@@ -68,14 +78,15 @@ html {
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
   transition: all 0.3s ease;
   border: 1px solid var(--charcoal);
 }
 
 .btn-primary:hover {
-  background-color: var(--gold);
-  border-color: var(--gold);
+  background-color: var(--navy);
+  border-color: var(--navy);
 }
 
 .btn-secondary {
@@ -133,3 +144,107 @@ html {
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
+
+/* ---------- Waterfront-style design system ---------- */
+.font-serif-display {
+  font-family: var(--font-heading);
+}
+
+/* Small uppercase eyebrow with rules on either side */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+}
+.eyebrow-left::before {
+  display: none;
+}
+.eyebrow-left::after {
+  display: none;
+}
+.eyebrow-on-dark {
+  color: #9aa3b2;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+.btn-navy,
+.btn-outline-light,
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.btn-navy {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+.btn-navy:hover {
+  background: #1a4d94;
+  border-color: #1a4d94;
+}
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--ink);
+}
+.btn-outline-dark {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.btn-outline-dark:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.tag-chip {
+  display: inline-block;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #d4d8e0;
+  transition: all 0.3s ease;
+}
+.tag-chip:hover {
+  border-color: var(--navy-light);
+  color: #fff;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
