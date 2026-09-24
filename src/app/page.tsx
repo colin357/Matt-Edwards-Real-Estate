@@ -9,32 +9,6 @@ import { site } from "@/lib/site";
 
 const serif = { fontFamily: "var(--font-heading)" };
 
-const marketingPillars = [
-  {
-    title: "Cinematic Video",
-    copy: "Story-driven property films and virtual tours that let buyers across the country and around the world experience a home before they fly in.",
-  },
-  {
-    title: "Photography & Drone",
-    copy: "Architectural photography and aerial footage that capture the light, the water and the lifestyle that make a Miami property exceptional.",
-  },
-  {
-    title: "Targeted Digital",
-    copy: "Precision social and digital campaigns that put your property in front of qualified, high-net-worth buyers where they already spend their time.",
-  },
-  {
-    title: "Global Network",
-    copy: "Relationships with luxury agents, private buyers and developers that extend your listing's reach well beyond the MLS.",
-  },
-];
-
-const videos = [
-  { id: "qMcIVQBrKuo", title: "Meet Matt Edwards" },
-  { id: "vbNVlaWzjks", title: "Luxury Real Estate Marketing" },
-  { id: "MSi7N3Zs0To", title: "Coconut Grove Neighborhood Tour" },
-  { id: "lMwvevFSfxk", title: "Coral Gables Neighborhood Tour" },
-];
-
 export default function Home() {
   const sortedListings = [...listings].sort((a, b) => b.price - a.price);
 
@@ -173,37 +147,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Marketing band (dark) ---------- */}
-      <section id="marketing" className="bg-[var(--ink)] text-white border-y border-[var(--navy)] py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="eyebrow eyebrow-on-dark">Modern Marketing</p>
-            <h2 className="section-title text-4xl md:text-6xl mt-5">White-Glove Marketing</h2>
-            <p className="mt-6 max-w-3xl mx-auto text-gray-400 leading-relaxed">
-              70% of buyers say video footage of a listing helps them make a decision — especially when making a
-              long-distance move. With Miami&apos;s buyers arriving from across the country and around the world, every
-              property Matt represents is presented for the modern era.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {marketingPillars.map((p, i) => (
-              <div
-                key={p.title}
-                className="border border-white/10 border-t-2 border-t-[var(--navy)] bg-white/[0.02] p-8 hover:bg-white/[0.05] transition-colors"
-              >
-                <p className="text-4xl text-[var(--navy-light)]" style={serif}>
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-4 text-[0.72rem] font-semibold tracking-[0.25em] uppercase">{p.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-gray-400">{p.copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ---------- Showcase communities mosaic ---------- */}
-      <section id="communities" className="bg-[var(--cream)] pt-20">
+      <section id="communities" className="bg-white pt-20">
         <div className="text-center mb-12 px-6">
           <p className="eyebrow">Explore the Area</p>
           <h2 className="section-title text-4xl md:text-5xl text-[var(--ink)] mt-5">Showcase Communities</h2>
@@ -238,34 +183,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Watch & explore ---------- */}
-      <section className="bg-[var(--cream)] py-20 border-t border-gray-200">
-        <div className="text-center mb-12 px-6">
-          <p className="eyebrow">Watch &amp; Explore</p>
-          <h2 className="section-title text-4xl md:text-5xl text-[var(--ink)] mt-5">YouTube</h2>
-        </div>
-        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {videos.map((v) => (
-            <div key={v.id}>
-              <div className="relative aspect-video bg-black overflow-hidden">
-                <iframe
-                  src={`https://www.youtube.com/embed/${v.id}?rel=0`}
-                  title={v.title}
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
-              <p className="mt-3 text-sm font-medium text-[var(--ink)]">{v.title}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ---------- About + portfolio ledger ---------- */}
+      {/* ---------- About ---------- */}
       <section id="about" className="bg-white py-24">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <div>
             <p className="text-[0.62rem] font-semibold tracking-[0.35em] uppercase text-[var(--navy)]">About Matt Edwards</p>
             <h2 className="mt-4 text-3xl md:text-4xl uppercase leading-tight text-[var(--ink)]" style={serif}>
@@ -290,31 +210,6 @@ export default function Home() {
                 future sale value.
               </p>
             </div>
-          </div>
-
-          <div>
-            <p className="text-[0.62rem] font-semibold tracking-[0.35em] uppercase text-[var(--navy)]">The Portfolio</p>
-            <h2 className="mt-4 text-3xl md:text-4xl uppercase leading-tight text-[var(--ink)]" style={serif}>
-              Signature Properties Across Miami
-            </h2>
-            <ul className="mt-6 border-t border-gray-200">
-              {sortedListings.map((l) => (
-                <li key={l.slug} className="border-b border-gray-200">
-                  <Link href={`/listings/${l.slug}`} className="group flex items-center justify-between gap-4 py-4">
-                    <span className="text-2xl text-[var(--navy)]" style={serif}>
-                      {l.priceFormatted}
-                    </span>
-                    <span className="text-xs tracking-wider text-[var(--charcoal-light)] text-right group-hover:text-[var(--navy)] transition-colors">
-                      {l.title}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 italic text-sm leading-relaxed text-[var(--muted)]">
-              Matt prides himself on being his clients&apos; biggest advocate — always prioritizing their interests
-              above all else, with integrity, discretion and a willingness to go beyond the transaction.
-            </p>
           </div>
         </div>
       </section>
