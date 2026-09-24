@@ -9,7 +9,6 @@ const quickLinks = [
   { label: "South of Fifth Condos", href: "/south-of-fifth-condos" },
   { label: "Neighborhoods", href: "/#communities" },
   { label: "About Matt", href: "/#about" },
-  { label: "Marketing", href: "/#marketing" },
   { label: "Contact", href: "/#contact" },
 ];
 
