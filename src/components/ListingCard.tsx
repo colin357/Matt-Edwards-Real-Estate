@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/lib/site";
 import { Listing, getListingImages } from "@/data/listings";
 
 interface ListingCardProps {
@@ -92,8 +93,8 @@ export default function ListingCard({ listing, featured = false }: ListingCardPr
           <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Image
-                src="/images/Luxe Living.png"
-                alt="Luxe Living Realty"
+                src="/images/one-sothebys.png"
+                alt={site.brokerage}
                 width={20}
                 height={20}
                 className="h-5 w-auto"

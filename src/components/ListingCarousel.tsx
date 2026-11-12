@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/lib/site";
 import { useRef } from "react";
 
 export type CarouselListing = {
@@ -76,7 +77,7 @@ export default function ListingCarousel({ listings }: { listings: CarouselListin
                 <span>{l.bathrooms} Baths</span>
               </div>
               <p className="text-center mt-2">{l.sqftFormatted} Sq Ft</p>
-              <p className="text-center mt-3 text-[10px] tracking-wider text-[var(--muted)]">Listed by Dora Puig · Luxe Living Realty</p>
+              <p className="text-center mt-3 text-[10px] tracking-wider text-[var(--muted)]">Listed by Dora Puig · {site.brokerage}</p>
             </div>
           </Link>
         ))}

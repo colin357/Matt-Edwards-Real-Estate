@@ -97,7 +97,7 @@ export default function Footer() {
               ))}
             </ul>
             <Image
-              src="/images/Luxe Living.png"
+              src="/images/one-sothebys.png"
               alt={site.brokerage}
               width={150}
               height={32}

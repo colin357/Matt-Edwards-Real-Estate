@@ -1,7 +1,7 @@
 export const site = {
   name: "Matt Edwards",
   tagline: "Miami Luxury Real Estate",
-  brokerage: "Luxe Living Realty",
+  brokerage: "One Sotheby's International Realty",
   phone: "(214) 886-0363",
   phoneHref: "tel:+12148860363",
   email: "matt@luxelivingmiami.com",

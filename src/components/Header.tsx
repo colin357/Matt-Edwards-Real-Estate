@@ -71,11 +71,11 @@ export default function Header() {
             </span>
             <span className="hidden sm:block w-px h-12 bg-white/80" aria-hidden="true" />
             <Image
-              src="/images/Luxe Living.png"
+              src="/images/one-sothebys.png"
               alt={site.brokerage}
-              width={150}
-              height={32}
-              className="hidden sm:block h-7 w-auto brightness-0 invert"
+              width={1013}
+              height={223}
+              className="hidden sm:block h-8 lg:h-10 w-auto brightness-0 invert"
               priority
             />
           </Link>
