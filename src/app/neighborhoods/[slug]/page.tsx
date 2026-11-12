@@ -155,9 +155,6 @@ export default async function NeighborhoodPage({ params }: Props) {
             <Link href="/#contact" className="btn-primary text-center">
               Call Me
             </Link>
-            <Link href="/#listings" className="btn-secondary text-center">
-              View Listings
-            </Link>
           </div>
         </div>
       </section>

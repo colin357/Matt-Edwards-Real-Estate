@@ -5,7 +5,6 @@ import { neighborhoods } from "@/data/neighborhoods";
 import { site } from "@/lib/site";
 
 const quickLinks = [
-  { label: "Exclusive Listings", href: "/listings" },
   { label: "South of Fifth Condos", href: "/south-of-fifth-condos" },
   { label: "Neighborhoods", href: "/#communities" },
   { label: "About Matt", href: "/#about" },
@@ -97,7 +96,7 @@ export default function Footer() {
               ))}
             </ul>
             <Image
-              src="/images/Luxe Living.png"
+              src="/images/one-sothebys.png"
               alt={site.brokerage}
               width={150}
               height={32}

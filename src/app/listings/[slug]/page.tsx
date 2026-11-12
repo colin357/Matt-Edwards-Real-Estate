@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/lib/site";
 import { notFound } from "next/navigation";
 import { getListingBySlug, getAllListings, getListingImages } from "@/data/listings";
 import ImageGallery from "@/components/ImageGallery";
@@ -139,13 +140,13 @@ export default async function ListingPage({ params }: Props) {
                 </p>
                 <div className="flex items-center gap-2 mt-3">
                   <Image
-                    src="/images/Luxe Living.png"
-                    alt="Luxe Living Realty"
+                    src="/images/one-sothebys.png"
+                    alt={site.brokerage}
                     width={24}
                     height={24}
                     className="h-6 w-auto"
                   />
-                  <span className="text-sm text-[var(--muted)]">Listed by Dora Puig</span>
+                  <span className="text-sm text-[var(--muted)]">Listed by {site.name}</span>
                 </div>
               </div>
 
@@ -248,13 +249,13 @@ export default async function ListingPage({ params }: Props) {
                       (214) 886-0363
                     </a>
                     <a
-                      href="mailto:matt@luxelivingmiami.com"
+                      href={`mailto:${site.email}`}
                       className="flex items-center text-[var(--charcoal)] hover:text-[var(--gold)] transition-colors"
                     >
                       <svg className="w-5 h-5 mr-3 text-[var(--gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      matt@luxelivingmiami.com
+                      {site.email}
                     </a>
                   </div>
 

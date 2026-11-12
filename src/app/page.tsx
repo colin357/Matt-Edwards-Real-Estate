@@ -1,33 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
-import ListingCarousel from "@/components/ListingCarousel";
 import { Icon } from "@/components/SocialIcons";
-import { getListingImages, listings } from "@/data/listings";
 import { neighborhoods } from "@/data/neighborhoods";
 import { site } from "@/lib/site";
 
 const serif = { fontFamily: "var(--font-heading)" };
 
 export default function Home() {
-  const sortedListings = [...listings].sort((a, b) => b.price - a.price);
-
-  const carouselListings = sortedListings.map((l) => ({
-    slug: l.slug,
-    title: l.title,
-    neighborhood: l.neighborhood,
-    priceFormatted: l.priceFormatted,
-    propertyType: l.propertyType,
-    bedrooms: l.bedrooms,
-    bathrooms: l.bathrooms,
-    sqftFormatted: l.sqftFormatted,
-    image: getListingImages(l)[0],
-  }));
-
   const chips = [
     ...neighborhoods.map((n) => ({ label: n.name, href: `/neighborhoods/${n.slug}` })),
-    { label: "Venetian Islands", href: "/listings" },
-    { label: "Waterfront Estates", href: "/listings" },
     { label: "Luxury Condos", href: "/south-of-fifth-condos" },
   ];
 
@@ -123,27 +105,8 @@ export default function Home() {
               <Link href="#contact" className="btn-navy">
                 Contact <Icon name="email" className="w-3 h-3" />
               </Link>
-              <Link href="/listings" className="btn-outline-light">
-                View Listings
-              </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ---------- Exclusive listings carousel ---------- */}
-      <section id="listings" className="bg-[var(--cream)] py-20">
-        <div className="text-center mb-12 px-6">
-          <p className="eyebrow">Exclusive Listings</p>
-          <h2 className="section-title text-4xl md:text-5xl text-[var(--ink)] mt-5">Featured Properties</h2>
-        </div>
-        <div className="max-w-[1400px] mx-auto px-4 lg:px-12">
-          <ListingCarousel listings={carouselListings} />
-        </div>
-        <div className="text-center mt-12">
-          <Link href="/listings" className="btn-outline-dark">
-            View All Listings
-          </Link>
         </div>
       </section>
 

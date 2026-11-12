@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import ListingCard from "@/components/ListingCard";
 import { getAllListings } from "@/data/listings";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Listings | Matt Edwards Luxury Real Estate Miami",
@@ -33,34 +34,22 @@ export default function ListingsPage() {
       {/* Listings Grid */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Stats Bar */}
-          <div className="flex flex-wrap justify-center gap-8 mb-12 pb-12 border-b border-gray-100">
-            <div className="text-center">
-              <p className="text-2xl font-semibold text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>
-                {listings.length}
+          {listings.length === 0 ? (
+            <div className="text-center max-w-2xl mx-auto py-8">
+              <h2 className="text-2xl md:text-3xl font-semibold text-[var(--charcoal)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+                New Listings Coming Soon
+              </h2>
+              <p className="text-[var(--muted)] text-lg">
+                Matt&apos;s newest properties with {site.brokerage} will be featured here shortly. In the meantime, reach out to hear about current and off-market opportunities.
               </p>
-              <p className="text-sm text-[var(--muted)]">Active Listings</p>
             </div>
-            <div className="text-center">
-              <p className="text-2xl font-semibold text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>
-                $7M - $25M
-              </p>
-              <p className="text-sm text-[var(--muted)]">Price Range</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {listings.map((listing) => (
+                <ListingCard key={listing.id} listing={listing} />
+              ))}
             </div>
-            <div className="text-center">
-              <p className="text-2xl font-semibold text-[var(--charcoal)]" style={{ fontFamily: 'var(--font-playfair)' }}>
-                6
-              </p>
-              <p className="text-sm text-[var(--muted)]">Neighborhoods</p>
-            </div>
-          </div>
-
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {listings.map((listing) => (
-              <ListingCard key={listing.id} listing={listing} />
-            ))}
-          </div>
+          )}
         </div>
       </section>
 
