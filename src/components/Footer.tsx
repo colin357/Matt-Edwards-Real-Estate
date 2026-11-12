@@ -5,7 +5,6 @@ import { neighborhoods } from "@/data/neighborhoods";
 import { site } from "@/lib/site";
 
 const quickLinks = [
-  { label: "Exclusive Listings", href: "/listings" },
   { label: "South of Fifth Condos", href: "/south-of-fifth-condos" },
   { label: "Neighborhoods", href: "/#communities" },
   { label: "About Matt", href: "/#about" },

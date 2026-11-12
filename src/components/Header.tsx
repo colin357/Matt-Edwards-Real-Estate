@@ -14,14 +14,7 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  {
-    label: "Listings",
-    href: "/listings",
-    children: [
-      { label: "Exclusive Listings", href: "/listings" },
-      { label: "South of Fifth Condos", href: "/south-of-fifth-condos" },
-    ],
-  },
+  { label: "South of Fifth Condos", href: "/south-of-fifth-condos" },
   {
     label: "Neighborhoods",
     href: "/#communities",

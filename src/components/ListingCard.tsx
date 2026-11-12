@@ -99,7 +99,7 @@ export default function ListingCard({ listing, featured = false }: ListingCardPr
                 height={20}
                 className="h-5 w-auto"
               />
-              <span className="text-[10px] text-[var(--muted)] tracking-wide">Listed by Dora Puig</span>
+              <span className="text-[10px] text-[var(--muted)] tracking-wide">Listed by {site.name}</span>
             </div>
             <span className="text-xs uppercase tracking-wider text-[var(--charcoal)] group-hover:text-[var(--gold)] transition-colors flex items-center">
               View Property

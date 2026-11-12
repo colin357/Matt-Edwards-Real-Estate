@@ -146,7 +146,7 @@ export default async function ListingPage({ params }: Props) {
                     height={24}
                     className="h-6 w-auto"
                   />
-                  <span className="text-sm text-[var(--muted)]">Listed by Dora Puig</span>
+                  <span className="text-sm text-[var(--muted)]">Listed by {site.name}</span>
                 </div>
               </div>
 
