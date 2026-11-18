@@ -113,6 +113,12 @@ export default function Footer() {
             is subject to errors, omissions, changes in price, condition, sale, or withdrawal without notice. All
             measurements and square footages are approximate. Equal Housing Opportunity.
           </p>
+          <p className="text-gray-500 text-xs mt-3">
+            Designed by{" "}
+            <a href="https://ownitsocial.com" target="_blank" rel="noopener" className="hover:text-white transition-colors">
+              Own It Social
+            </a>
+          </p>
         </div>
       </div>
     </footer>
