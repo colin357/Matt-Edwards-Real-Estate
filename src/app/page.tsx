@@ -155,16 +155,15 @@ export default function Home() {
               A Local&apos;s Perspective on Miami Luxury
             </h2>
             <div className="mt-6 pt-6 border-t border-gray-200 space-y-5 text-[0.95rem] leading-[1.9] text-[var(--muted)]">
-              <p className="italic">
-                Written by Matt Edwards — Miami luxury real estate advisor with {site.brokerage}.
-              </p>
               <p>
                 Matt knows Miami inside and out and can provide locals-only information and experiences. From the
                 historic estates of <strong className="text-[var(--ink)]">Coral Gables</strong> to the sleek penthouses of{" "}
                 <strong className="text-[var(--ink)]">Brickell</strong>, from the exclusive enclave of{" "}
                 <strong className="text-[var(--ink)]">Fisher Island</strong> to the vibrant streets of{" "}
                 <strong className="text-[var(--ink)]">Coconut Grove</strong>, to Miami Beach and his own neighborhood in{" "}
-                <strong className="text-[var(--ink)]">South of Fifth</strong>, his intimate knowledge of each
+                <strong className="text-[var(--ink)]">South of Fifth</strong>, and north to{" "}
+                <strong className="text-[var(--ink)]">Palm Beach</strong> and{" "}
+                <strong className="text-[var(--ink)]">West Palm Beach</strong>, his intimate knowledge of each
                 neighborhood ensures clients find not just a property, but the perfect lifestyle.
               </p>
               <p>
