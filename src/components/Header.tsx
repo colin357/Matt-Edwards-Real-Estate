@@ -25,6 +25,8 @@ const navItems: NavItem[] = [
       { label: "Brickell", href: "/neighborhoods/brickell" },
       { label: "Coconut Grove", href: "/neighborhoods/coconut-grove" },
       { label: "Coral Gables", href: "/neighborhoods/coral-gables" },
+      { label: "Palm Beach", href: "/neighborhoods/palm-beach" },
+      { label: "West Palm Beach", href: "/neighborhoods/west-palm-beach" },
     ],
   },
   { label: "About", href: "/#about" },
