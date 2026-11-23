@@ -267,6 +267,90 @@ export const neighborhoods: Neighborhood[] = [
       "For families, Coral Gables is exceptional. The schools are among the best in Miami-Dade County, the streets are safe and beautifully maintained, and there's a genuine sense of community. It's the kind of place where kids grow up riding bikes followed by a dinner on Miracle Mile.",
       "From a real estate standpoint, Coral Gables has incredible staying power. The strict zoning, architectural standards, and limited inventory mean that values here are remarkably stable. Historic estates on large lots are increasingly rare, and new construction in prime locations commands top dollar. If you're looking for a legacy property in Miami, Coral Gables should be on your list."
     ]
+  },
+  {
+    name: "Palm Beach",
+    slug: "palm-beach",
+    tagline: "The Island of Timeless Elegance",
+    heroImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80",
+    description: [
+      "Palm Beach is one of the most storied addresses in America. This barrier island, stretching along the Atlantic just north of Miami, has been a winter retreat for the country's most prominent families for more than a century, and today it is increasingly a year-round home for buyers relocating to South Florida.",
+      "The island is defined by grand oceanfront estates, Mediterranean Revival architecture by Addison Mizner, manicured hedges and quiet, palm-lined streets. Worth Avenue, with its courtyards and vias, remains one of the world's great luxury shopping destinations, while The Breakers anchors the island's social life.",
+      "Residential offerings range from historic estates on the ocean and the Intracoastal to elegant condominiums and townhomes in town. With strict architectural review and very limited inventory, Palm Beach offers privacy, prestige and an unhurried pace that is hard to find anywhere else."
+    ],
+    whatToDo: [
+      {
+        title: "Worth Avenue",
+        description: "Palm Beach's legendary shopping street, lined with international luxury houses, local boutiques, galleries and hidden Mediterranean courtyards."
+      },
+      {
+        title: "The Breakers",
+        description: "The iconic oceanfront resort, home to golf, a spa, beach clubs and some of the island's most celebrated dining."
+      },
+      {
+        title: "Lake Trail",
+        description: "A scenic path along the Lake Worth Lagoon, perfect for morning walks and bike rides past some of the island's most beautiful estates."
+      },
+      {
+        title: "Flagler Museum",
+        description: "Whitehall, Henry Flagler's Gilded Age mansion, now a museum that tells the story of how Palm Beach and South Florida came to be."
+      },
+      {
+        title: "Society of the Four Arts",
+        description: "A cultural center with gardens, a library, lectures, concerts and exhibitions at the heart of the island's community life."
+      },
+      {
+        title: "Palm Beach Municipal Beach",
+        description: "A favorite stretch of sand for residents, with calm, clear water and easy access from the center of town."
+      }
+    ],
+    mattsTake: [
+      "Palm Beach is where I send clients who want old-world elegance and genuine privacy. It's a place that has protected its character for generations, and that's exactly what makes it so special.",
+      "More and more of my clients are looking at Palm Beach alongside Miami. It's an easy drive up, it offers a quieter pace of life, and it pairs perfectly with a Miami residence for buyers who want both energy and escape.",
+      "From an investment perspective, Palm Beach has some of the highest barriers to entry in the country. Inventory is extremely limited, oceanfront and lakefront estates rarely trade, and demand from relocating buyers continues to grow. For a true legacy property, Palm Beach belongs on your list."
+    ]
+  },
+  {
+    name: "West Palm Beach",
+    slug: "west-palm-beach",
+    tagline: "South Florida's Waterfront City on the Rise",
+    heroImage: "https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920&q=80",
+    description: [
+      "West Palm Beach sits directly across the Lake Worth Lagoon from Palm Beach and has become one of the most dynamic cities in South Florida. A wave of financial firms, new residents and new development has transformed its downtown into a true live, work and play destination.",
+      "The waterfront along Flagler Drive offers sweeping views across to Palm Beach, while Clematis Street and Rosemary Square bring dining, nightlife and shopping into a walkable downtown core. The Norton Museum of Art and the Kravis Center give the city a cultural depth to match its growth.",
+      "Residential options include new luxury condominium towers on the waterfront, charming historic neighborhoods such as El Cid, and single-family homes along the Intracoastal. With the Brightline station downtown, Miami is an easy train ride away."
+    ],
+    whatToDo: [
+      {
+        title: "Flagler Drive Waterfront",
+        description: "A scenic promenade along the Lake Worth Lagoon with views of Palm Beach, ideal for walking, running and cycling."
+      },
+      {
+        title: "Clematis Street",
+        description: "Downtown's lively main street, filled with restaurants, bars and shops, and home to popular weekly events and a waterfront green market."
+      },
+      {
+        title: "Norton Museum of Art",
+        description: "One of Florida's premier art museums, with an outstanding permanent collection, rotating exhibitions and a beautiful sculpture garden."
+      },
+      {
+        title: "Kravis Center for the Performing Arts",
+        description: "The region's leading performing arts venue, hosting Broadway productions, concerts, ballet and opera."
+      },
+      {
+        title: "Rosemary Square",
+        description: "A mixed-use district with dining, shopping, entertainment and offices at the center of downtown West Palm Beach."
+      },
+      {
+        title: "Brightline Station",
+        description: "High-speed rail service connecting downtown West Palm Beach to Fort Lauderdale and Miami."
+      }
+    ],
+    mattsTake: [
+      "West Palm Beach is one of the most exciting markets in South Florida right now. The city has changed dramatically in recent years, and the energy downtown is real.",
+      "I love West Palm Beach for clients who want walkability, culture and the waterfront, with Palm Beach right across the bridge. The new luxury towers offer the kind of amenities and views buyers expect in Miami, often at a different price point.",
+      "From an investment standpoint, the momentum is hard to ignore. Corporate relocations, new development and Brightline access are driving demand, and well-located waterfront properties are positioned for long-term growth."
+    ]
   }
 ];
 

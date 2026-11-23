@@ -123,7 +123,9 @@ export default function Home() {
                 ? "col-span-2 lg:col-span-6 h-[260px] lg:h-[340px]"
                 : i < 3
                   ? "col-span-1 lg:col-span-3 h-[200px] lg:h-[340px]"
-                  : "col-span-1 lg:col-span-4 h-[200px] lg:h-[260px]";
+                  : i < 6
+                    ? "col-span-1 lg:col-span-4 h-[200px] lg:h-[260px]"
+                    : `${i === neighborhoods.length - 1 && i % 2 === 1 ? "col-span-2" : "col-span-1"} lg:col-span-6 h-[200px] lg:h-[300px]`;
             return (
               <Link key={n.slug} href={`/neighborhoods/${n.slug}`} className={`group relative overflow-hidden ${span}`}>
                 <Image
