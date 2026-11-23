@@ -9,6 +9,7 @@ const quickLinks = [
   { label: "Neighborhoods", href: "/#communities" },
   { label: "About Matt", href: "/#about" },
   { label: "Contact", href: "/#contact" },
+  { label: "Real Estate FAQ", href: "/faq" },
 ];
 
 export default function Footer() {

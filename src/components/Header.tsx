@@ -31,6 +31,7 @@ const navItems: NavItem[] = [
   },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export default function Header() {
