@@ -58,7 +58,7 @@ export const neighborhoods: Neighborhood[] = [
     mattsTake: [
       "South of Fifth is where I send clients who want the best of the best without the noise. It's Miami Beach for people who actually live here, not just visit. The neighborhood has a residential quality that you won't find anywhere else on the island.",
       "What I love about SoFi is the walkability, the wellness, and the community. The average age is 55, but everyone is entrepreneurial and there's a lot of energy. You can grab a coffee at Pura Vida, walk your dog through South Pointe Park, have dinner at Smith and Wollensky, and never get in your car. For a city built around driving, that's unique.",
-      "From an investment perspective, SoFi has consistently outperformed the rest of Miami Beach. It's where I also choose to live. The limited inventory, prime location, and high barriers to entry mean that properties here hold their value exceptionally well. If you're looking for a trophy asset in Miami, this is where to start."
+      "From an investment perspective, SoFi's limited inventory has helped values hold up well over time. It's where I also choose to live. The limited inventory, prime location, and high barriers to entry mean that properties here hold their value exceptionally well. If you're looking for a trophy asset in Miami, this is where to start."
     ]
   },
   {
@@ -108,7 +108,7 @@ export const neighborhoods: Neighborhood[] = [
     imageAlt: "Brickell high-rise condominium skyline in Miami",
     description: [
       "Brickell is Miami's most dynamic urban neighborhood. Known as the financial district of South Florida, it has evolved far beyond its corporate roots into a vibrant residential community with world-class dining, nightlife, and retail. The skyline is defined by sleek glass towers that house some of the city's most sought-after condominiums.",
-      "Brickell City Centre, a $1.05 billion mixed-use development, serves as the neighborhood's central hub, offering luxury shopping, restaurants, and a climate-controlled open-air design. The surrounding streets are lined with cafes, cocktail bars, and international restaurants that cater to the neighborhood's cosmopolitan population.",
+      "Brickell City Centre, a major mixed-use development, serves as the neighborhood's central hub, offering luxury shopping, restaurants, and a climate-controlled open-air design. The surrounding streets are lined with cafes, cocktail bars, and international restaurants that cater to the neighborhood's cosmopolitan population.",
       "The Brickell waterfront along Biscayne Bay provides a scenic backdrop for your morning walk, meals, or work. Many of the buildings are extremely amenity-driven — with pools, gyms, spas, coworking spaces, and restaurants all on-site — so you don't need to leave the building if you don't want to."
     ],
     whatToDo: [
@@ -195,11 +195,11 @@ export const neighborhoods: Neighborhood[] = [
   {
     name: "Fisher Island",
     slug: "fisher-island",
-    tagline: "America's Wealthiest Zip Code",
+    tagline: "Miami's Most Private Island",
     heroImage: "https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920&q=80",
     imageAlt: "Continuum South Beach towers on the oceanfront",
     description: [
-      "Fisher Island is a 216-acre private island located just south of Miami Beach, accessible only by ferry. With a population of fewer than 1000 residents, it is one of the most exclusive residential communities in the world, consistently ranked among America's wealthiest zip codes. Most residents use Fisher Island as their second or third home, drawn by the unmatched privacy it offers.",
+      "Fisher Island is a small private island just south of Miami Beach, accessible only by ferry or private boat. Home to a close-knit community of residents, it is one of the most private residential communities in South Florida. Many residents use Fisher Island as a second or third home, drawn by the privacy it offers.",
       "The island features a private beach club, a world-class golf course, a deep-water marina, multiple restaurants, a spa, and tennis courts. Every amenity is designed for residents only, creating an environment of privacy and exclusivity.",
       "Residences on Fisher Island range from elegant condominiums to grand single-family estates, many with direct ocean or bay views. The island is also home to one of the top-rated private schools in South Florida, making it a surprisingly wonderful choice for families looking for a secure, world-class environment to raise children."
     ],
@@ -207,7 +207,7 @@ export const neighborhoods: Neighborhood[] = [
     whatToDo: [
       {
         title: "Fisher Island Beach Club",
-        description: "A pristine private beach with imported Bahamian sand, full-service cabanas, and a beachfront restaurant. One of the most exclusive beach experiences in the country."
+        description: "A pristine private beach with imported Bahamian sand, full-service cabanas, and a beachfront restaurant. A private beach experience reserved for residents."
       },
       {
         title: "The Links at Fisher Island",

@@ -148,7 +148,7 @@ export default function FaqPage() {
             <LeadForm
               eyebrow="Ask a Question"
               title="Get a Personal Answer"
-              subtitle="Share a few details and Matt will follow up personally within 24 hours."
+              subtitle="Share a few details and Matt will follow up personally."
               buttonLabel="Send My Question"
               source="FAQ Page"
             />

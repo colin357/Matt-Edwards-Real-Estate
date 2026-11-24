@@ -205,7 +205,7 @@ export default async function ComparisonPage({ params }: Props) {
             <LeadForm
               eyebrow="Compare in Person"
               title="Request a Private Tour"
-              subtitle="Share a few details and Matt will follow up personally within 24 hours."
+              subtitle="Share a few details and Matt will follow up personally."
               buttonLabel="Request My Tour"
               source={`Comparison: ${c.title}`}
             />

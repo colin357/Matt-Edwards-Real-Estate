@@ -156,7 +156,7 @@ export const comparisons: Comparison[] = [
       },
       {
         heading: "Investment perspective",
-        body: "Brickell's large condo inventory gives buyers more choice. Miami Beach's limited land and direct beach access support strong demand, particularly in South of Fifth, which has historically outperformed much of the island.",
+        body: "Brickell's large condo inventory gives buyers more choice. Miami Beach's limited land and direct beach access support strong demand, particularly in South of Fifth, which has seen strong, steady demand.",
       },
     ],
     chooseA: "You work downtown, want to walk everywhere and love a high-energy urban lifestyle.",

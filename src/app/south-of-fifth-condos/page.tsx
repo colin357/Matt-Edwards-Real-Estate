@@ -18,7 +18,7 @@ const signatureBuildings = [
   {
     name: "Continuum",
     slug: "continuum",
-    detail: "Twin oceanfront towers on the largest private beachfront in SoFi, with 12 acres of resort amenities.",
+    detail: "Twin oceanfront towers set on expansive private grounds.",
   },
   {
     name: "Apogee",
@@ -61,7 +61,7 @@ const valueProps = [
   {
     title: "Limited inventory, lasting value",
     description:
-      "High barriers to entry and a fixed footprint mean SoFi has consistently outperformed the rest of Miami Beach. These are trophy assets that hold their value.",
+      "High barriers to entry and a fixed footprint mean SoFi's limited inventory has helped values hold up well over time. These are trophy assets.",
   },
   {
     title: "Resort amenities at home",
@@ -180,7 +180,7 @@ export default function SouthOfFifthCondosPage() {
               { stat: "SoFi", label: "Resident & Specialist" },
               { stat: "$1M–$50M+", label: "Condo Price Range" },
               { stat: String(signatureBuildings.length), label: "Signature Buildings" },
-              { stat: "24 hrs", label: "Personal Response" },
+              { stat: "1:1", label: "Personal Response" },
             ].map((item) => (
               <div key={item.label}>
                 <p className="text-2xl md:text-3xl font-semibold text-[var(--gold)] mb-1" style={{ fontFamily: 'var(--font-playfair)' }}>
@@ -312,7 +312,7 @@ export default function SouthOfFifthCondosPage() {
                   &ldquo;What I love about SoFi is the walkability, the wellness, and the community. You can grab a coffee at Pura Vida, walk your dog through South Pointe Park, have dinner at Smith and Wollensky, and never get in your car. For a city built around driving, that&apos;s unique.&rdquo;
                 </p>
                 <p>
-                  From an investment standpoint, SoFi has consistently outperformed the rest of Miami Beach. The limited inventory, prime location, and high barriers to entry mean properties here hold their value exceptionally well. If you&apos;re looking for a trophy asset in Miami, this is where to start.
+                  From an investment standpoint, SoFi's limited inventory has helped values hold up well over time. The limited inventory, prime location, and high barriers to entry mean properties here hold their value exceptionally well. If you&apos;re looking for a trophy asset in Miami, this is where to start.
                 </p>
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
