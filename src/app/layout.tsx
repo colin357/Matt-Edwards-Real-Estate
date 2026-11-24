@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import MobileContactBar from "@/components/MobileContactBar";
+import FloatingCallButton from "@/components/FloatingCallButton";
 import JsonLd from "@/components/JsonLd";
 import { siteSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
@@ -42,6 +43,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <MobileContactBar />
+        <FloatingCallButton />
         <Analytics />
       </body>
     </html>
