@@ -24,7 +24,16 @@ export default function Home() {
     <>
       {/* ---------- Hero: video with headline and calls to action ---------- */}
       <section className="relative h-[100svh] min-h-[560px] max-h-[1000px] bg-black text-white flex items-center">
-        <Image src={site.heroPoster} alt="" aria-hidden="true" fill priority sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src={site.heroPoster}
+            alt={site.heroAlt}
+            fill
+            priority
+            sizes="100vw"
+            className={`object-cover ${site.heroVideoUrl ? "" : "hero-zoom"}`}
+          />
+        </div>
         <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/75" />
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 pt-20 text-center">

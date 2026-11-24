@@ -37,9 +37,14 @@ export const site = {
   },
 
   // ---------- Homepage hero ----------
-  /** TODO(Matt): replace this free stock clip (assets.mixkit.co) with Matt's own footage, e.g. "/videos/hero.mp4". */
-  heroVideoUrl: "https://assets.mixkit.co/videos/24555/24555-720.mp4",
+  /**
+   * TODO(Matt): add Matt's own waterfront footage, e.g. "/videos/hero.mp4". While empty, the hero shows
+   * the oceanfront photo below with a slow zoom. (The old free Mixkit sunset clip was removed.)
+   */
+  heroVideoUrl: "",
+  /** Oceanfront condo towers on Miami Beach (Continuum, South Pointe) */
   heroPoster: "https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920&q=75",
+  heroAlt: "Oceanfront condominium towers on the water in Miami Beach",
 
   // ---------- Lead form ----------
   /** true: budget dropdown includes "Under $1M". false: the form is labeled "Properties from $1M". */
