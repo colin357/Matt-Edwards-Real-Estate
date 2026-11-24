@@ -248,3 +248,16 @@ html {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Slow zoom on the homepage hero photo (off for visitors who prefer reduced motion) */
+@keyframes hero-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+.hero-zoom {
+  animation: hero-zoom 24s ease-out infinite alternate;
+  transform-origin: 60% 50%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-zoom { animation: none; }
+}
