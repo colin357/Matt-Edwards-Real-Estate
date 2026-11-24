@@ -66,6 +66,15 @@ export default function Home() {
               Sell with Matt <span aria-hidden="true">→</span>
             </Link>
           </div>
+          <a
+            href={phoneHref}
+            className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.12em] text-white/90 hover:text-white underline-offset-4 hover:underline"
+          >
+            <Icon name="phone" className="w-4 h-4" />
+            <span>
+              Call or text Matt&apos;s cell: <span className="whitespace-nowrap">{site.phone}</span>
+            </span>
+          </a>
         </div>
       </section>
 

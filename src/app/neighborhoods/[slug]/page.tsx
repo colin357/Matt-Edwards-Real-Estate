@@ -92,6 +92,15 @@ export default async function NeighborhoodPage({ params }: Props) {
               <p key={index}>{paragraph}</p>
             ))}
           </div>
+          <a
+            href={phoneHref}
+            className="mt-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-gray-200 bg-[var(--cream)] px-6 py-5 hover:border-[var(--navy)] transition-colors"
+          >
+            <span className="text-[var(--ink)]">
+              Questions about {neighborhood.name}? Call or text Matt&apos;s cell.
+            </span>
+            <span className="text-[var(--navy)] font-semibold tracking-[0.1em] whitespace-nowrap">{site.phone} →</span>
+          </a>
         </div>
       </section>
 

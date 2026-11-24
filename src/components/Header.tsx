@@ -78,17 +78,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center gap-8">
-            <Link href="/" aria-label="Home" className="text-white hover:text-[var(--navy-light)] transition-colors">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3L12 3z" />
-              </svg>
-            </Link>
+          <div className="hidden xl:flex items-center gap-5 2xl:gap-8 pl-6">
             {navItems.map((item) => (
               <div key={item.label} className="relative group">
                 <Link
                   href={item.href}
-                  className="text-[0.68rem] font-medium tracking-[0.2em] uppercase text-white hover:text-[var(--navy-light)] transition-colors py-8"
+                  className="whitespace-nowrap text-[0.66rem] font-medium tracking-[0.16em] 2xl:tracking-[0.2em] uppercase text-white hover:text-[var(--navy-light)] transition-colors py-8"
                 >
                   {item.label}
                 </Link>
@@ -110,8 +105,10 @@ export default function Header() {
                 )}
               </div>
             ))}
-            <span className="w-px h-6 bg-white/20" aria-hidden="true" />
-            <SocialIcons iconClassName="w-3.5 h-3.5" className="gap-4" />
+            <span className="hidden 2xl:block w-px h-6 bg-white/20" aria-hidden="true" />
+            <div className="hidden 2xl:block">
+              <SocialIcons iconClassName="w-3.5 h-3.5" className="gap-4" />
+            </div>
             <a
               href={phoneHref}
               className="text-[0.7rem] tracking-[0.15em] text-white hover:text-[var(--navy-light)] transition-colors whitespace-nowrap"
@@ -122,8 +119,9 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <div className="flex xl:hidden items-center gap-4">
-            <a href={phoneHref} aria-label="Call Matt" className="text-white p-2">
+            <a href={phoneHref} aria-label={`Call Matt's cell, ${site.phone}`} className="flex items-center gap-2 text-white p-2">
               <Icon name="phone" className="w-5 h-5" />
+              <span className="hidden sm:inline text-[0.72rem] tracking-[0.15em] whitespace-nowrap">{site.phone}</span>
             </a>
             <button
               className="p-2 text-white"
