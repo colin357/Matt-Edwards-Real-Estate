@@ -4,7 +4,10 @@ import type { Metadata } from "next";
 import LeadForm from "@/components/LeadForm";
 import { Icon } from "@/components/SocialIcons";
 import { comparisons, getComparisonBySlug } from "@/data/comparisons";
-import { site } from "@/lib/site";
+import { site, phoneHref } from "@/lib/site";
+import { pageMetadata } from "@/lib/metadata";
+import { breadcrumbSchema } from "@/lib/schema";
+import JsonLd from "@/components/JsonLd";
 
 const serif = { fontFamily: "var(--font-heading)" };
 const darkBg = { background: "linear-gradient(135deg, #0a0a0a 0%, #080f1e 45%, #0c3873 100%)" };
@@ -19,12 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const c = getComparisonBySlug(slug);
   if (!c) return {};
-  return {
-    title: `${c.title} | Matt Edwards`,
-    description: c.metaDescription,
-    openGraph: { title: c.title, description: c.metaDescription, type: "article" },
-    alternates: { canonical: `/faq/${c.slug}` },
-  };
+  return pageMetadata({ title: `${c.title} | Matt Edwards`, description: c.metaDescription, path: `/faq/${c.slug}`, type: "article" });
 }
 
 export default async function ComparisonPage({ params }: Props) {
@@ -40,7 +38,10 @@ export default async function ComparisonPage({ params }: Props) {
         "@type": "Article",
         headline: c.title,
         description: c.metaDescription,
-        author: { "@type": "Person", name: site.name, jobTitle: "Luxury Real Estate Advisor", worksFor: { "@type": "Organization", name: site.brokerage } },
+        author: { "@type": "Person", "@id": `${site.url}/#matt-edwards`, name: site.name },
+        publisher: { "@id": `${site.url}/#agent` },
+        image: `${site.url}/images/og-default.jpg`,
+        mainEntityOfPage: `${site.url}/faq/${c.slug}`,
       },
       {
         "@type": "FAQPage",
@@ -64,7 +65,13 @@ export default async function ComparisonPage({ params }: Props) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={jsonLd} />
+      <JsonLd
+        data={breadcrumbSchema([
+          ["Real Estate FAQ", "/faq"],
+          [c.title, `/faq/${c.slug}`],
+        ])}
+      />
 
       {/* ---------- Hero ---------- */}
       <section className="pt-36 pb-16 text-white px-6" style={darkBg}>
@@ -145,7 +152,7 @@ export default async function ComparisonPage({ params }: Props) {
               &ldquo;{c.mattsTake}&rdquo;
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a href={site.phoneHref} className="btn-navy justify-center">
+              <a href={phoneHref} className="btn-navy justify-center">
                 <Icon name="phone" className="w-3.5 h-3.5" /> Call Matt {site.phone}
               </a>
               <a
@@ -189,7 +196,7 @@ export default async function ComparisonPage({ params }: Props) {
               See both side by side with someone who knows them inside and out. Matt will put together a short list of
               homes in each so you can compare in person.
             </p>
-            <a href={site.phoneHref} className="mt-8 inline-flex items-center gap-4 hover:text-[var(--navy-light)] transition-colors">
+            <a href={phoneHref} className="mt-8 inline-flex items-center gap-4 hover:text-[var(--navy-light)] transition-colors">
               <Icon name="phone" className="w-5 h-5" />
               <span className="tracking-wider">{site.phone}</span>
             </a>

@@ -1,15 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import SocialIcons, { Icon } from "@/components/SocialIcons";
-import { neighborhoods } from "@/data/neighborhoods";
-import { site } from "@/lib/site";
+import { site, addressLine1, addressLine2, phoneHref } from "@/lib/site";
 
 const quickLinks = [
   { label: "South of Fifth Condos", href: "/south-of-fifth-condos" },
-  { label: "Neighborhoods", href: "/#communities" },
-  { label: "About Matt", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Sell Your Home", href: "/sell" },
+  { label: "About Matt", href: "/about" },
   { label: "Real Estate FAQ", href: "/faq" },
+  { label: "Contact", href: "/#contact" },
+];
+
+// Short list only; the full set lives in the header menu and the homepage communities section.
+const footerAreas = [
+  { label: "South of Fifth", href: "/neighborhoods/south-of-fifth" },
+  { label: "Sunset Harbour", href: "/neighborhoods/sunset-harbor" },
+  { label: "Fisher Island", href: "/neighborhoods/fisher-island" },
+  { label: "All Neighborhoods", href: "/#communities" },
 ];
 
 export default function Footer() {
@@ -21,7 +28,7 @@ export default function Footer() {
           <p className="text-2xl md:text-3xl uppercase tracking-[0.08em]" style={{ fontFamily: "var(--font-heading)" }}>
             Buying or selling in Miami? Let&apos;s talk.
           </p>
-          <a href={site.phoneHref} className="btn-outline-light shrink-0">
+          <a href={phoneHref} className="btn-outline-light shrink-0">
             <Icon name="phone" className="w-3.5 h-3.5" /> {site.phone}
           </a>
         </div>
@@ -31,7 +38,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* Monogram */}
           <div className="lg:col-span-2 flex lg:block justify-center">
-            <Image src="/images/logo.png" alt={site.name} width={96} height={96} className="h-24 w-auto invert" />
+            <Image src="/images/logo.png" alt="Matt Edwards monogram" width={96} height={96} className="h-24 w-auto invert" />
           </div>
 
           {/* Contact */}
@@ -42,7 +49,7 @@ export default function Footer() {
             </p>
             <ul className="space-y-3 text-sm text-gray-300">
               <li>
-                <a href={site.phoneHref} className="inline-flex items-center gap-3 hover:text-white transition-colors">
+                <a href={phoneHref} className="inline-flex items-center gap-3 hover:text-white transition-colors">
                   <Icon name="phone" className="w-3.5 h-3.5 text-gray-500" /> {site.phone}
                 </a>
               </li>
@@ -52,9 +59,9 @@ export default function Footer() {
                 </a>
               </li>
               <li className="pt-2 leading-relaxed">
-                {site.addressLine1}
+                {addressLine1}
                 <br />
-                {site.addressLine2}
+                {addressLine2}
               </li>
             </ul>
             <SocialIcons className="mt-6 justify-center lg:justify-start" />
@@ -65,14 +72,14 @@ export default function Footer() {
             <h4 className="inline-block text-[0.68rem] font-semibold tracking-[0.3em] uppercase border-b border-white/30 pb-3 mb-6">
               Neighborhoods
             </h4>
-            <ul className="grid grid-cols-2 gap-x-6 gap-y-4">
-              {neighborhoods.map((n) => (
-                <li key={n.slug}>
+            <ul className="space-y-4">
+              {footerAreas.map((n) => (
+                <li key={n.href}>
                   <Link
-                    href={`/neighborhoods/${n.slug}`}
+                    href={n.href}
                     className="text-[0.66rem] tracking-[0.2em] uppercase text-gray-400 hover:text-white transition-colors"
                   >
-                    {n.name}
+                    {n.label}
                   </Link>
                 </li>
               ))}
@@ -98,7 +105,8 @@ export default function Footer() {
             </ul>
             <Image
               src="/images/one-sothebys.png"
-              alt={site.brokerage}
+              alt=""
+              aria-hidden="true"
               width={150}
               height={32}
               className="h-7 w-auto mt-10 brightness-0 invert opacity-80"
@@ -109,7 +117,7 @@ export default function Footer() {
         {/* Legal */}
         <div className="border-t border-white/10 mt-14 pt-10 text-center">
           <p className="text-gray-500 text-xs leading-relaxed max-w-4xl mx-auto">
-            &copy; {new Date().getFullYear()} {site.name} · {site.brokerage} · {site.license}. All material presented
+            &copy; {new Date().getFullYear()} {site.name} · {site.brokerage} · {site.license}{site.about.licenseNumber ? ` · FL License ${site.about.licenseNumber}` : ""}. All material presented
             herein is intended for informational purposes only. Information is compiled from sources deemed reliable but
             is subject to errors, omissions, changes in price, condition, sale, or withdrawal without notice. All
             measurements and square footages are approximate. Equal Housing Opportunity.

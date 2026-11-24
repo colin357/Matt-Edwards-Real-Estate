@@ -21,11 +21,11 @@ export const faqCategories: FaqCategory[] = [
     faqs: [
       {
         q: "What are the best neighborhoods to live in Miami?",
-        a: "The most sought-after neighborhoods in Miami are South of Fifth and Sunset Harbor in Miami Beach, Fisher Island, Brickell, Coconut Grove and Coral Gables. Each offers a different lifestyle: South of Fifth for walkable oceanfront living, Brickell for an urban high-rise lifestyle, Coconut Grove and Coral Gables for leafy, family-friendly streets, and Fisher Island for ultimate privacy. Matt Edwards can help you match a neighborhood to the way you want to live.",
+        a: "The most sought-after neighborhoods in Miami are South of Fifth and Sunset Harbour in Miami Beach, Fisher Island, Brickell, Coconut Grove and Coral Gables. Each offers a different lifestyle: South of Fifth for walkable oceanfront living, Brickell for an urban high-rise lifestyle, Coconut Grove and Coral Gables for leafy, family-friendly streets, and Fisher Island for ultimate privacy. Matt Edwards can help you match a neighborhood to the way you want to live.",
       },
       {
         q: "What are the best neighborhoods in Miami for families?",
-        a: "Coral Gables, Coconut Grove and Pinecrest are top choices for families in Miami because of their highly rated public and private schools, parks and quiet residential streets. In Miami Beach, Sunset Harbor and the residential streets of Mid-Beach are popular with families who want to be close to the water.",
+        a: "Coral Gables, Coconut Grove and Pinecrest are top choices for families in Miami because of their highly rated public and private schools, parks and quiet residential streets. In Miami Beach, Sunset Harbour and the residential streets of Mid-Beach are popular with families who want to be close to the water.",
       },
       {
         q: "Is now a good time to buy a home in Miami?",
@@ -162,12 +162,12 @@ export const faqCategories: FaqCategory[] = [
     title: "Working with Matt",
     faqs: [
       {
-        q: "Who is the best luxury real estate agent in Miami Beach?",
-        a: "The best luxury agent for you is one who knows your target neighborhood in depth, has access to off-market listings and uses modern marketing. Matt Edwards is a Miami luxury real estate advisor with One Sotheby's International Realty who lives in South of Fifth and specializes in Miami Beach, Fisher Island, Brickell, Coconut Grove, Coral Gables, Palm Beach and West Palm Beach.",
+        q: "How do I choose a luxury real estate agent in Miami?",
+        a: "Choose an agent who works in your target neighborhood every day, can show you recent sales in the exact buildings or streets you are considering, and can explain how they find off-market opportunities. Ask how they will market a home (photography, video, digital advertising and brokerage network), how quickly they respond, who is on their team of lenders, attorneys and inspectors, and for references from recent clients. Interview two or three agents before you commit. Matt Edwards, a South of Fifth resident with ONE Sotheby's International Realty, is happy to answer these questions for you.",
       },
       {
         q: "What areas does Matt Edwards serve?",
-        a: "Matt Edwards serves buyers and sellers across Miami and Palm Beach, including South of Fifth, Sunset Harbor, Miami Beach, Fisher Island, Brickell, Coconut Grove, Coral Gables, Palm Beach and West Palm Beach.",
+        a: "Matt Edwards serves buyers and sellers across Miami and Palm Beach, including South of Fifth, Sunset Harbour, Miami Beach, Fisher Island, Brickell, Coconut Grove, Coral Gables, Palm Beach and West Palm Beach.",
       },
       {
         q: "Can Matt help me find off-market properties?",

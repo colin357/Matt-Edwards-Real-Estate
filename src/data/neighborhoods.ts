@@ -3,6 +3,8 @@ export interface Neighborhood {
   slug: string;
   tagline: string;
   heroImage: string;
+  /** Describes what the hero photo actually shows (used as alt text). TODO(Matt): re-check when photos change. */
+  imageAlt: string;
   description: string[];
   videoUrl?: string;
   videoIsShort?: boolean;
@@ -19,6 +21,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "south-of-fifth",
     tagline: "Miami Beach's Most Exclusive Enclave",
     heroImage: "https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=1920&q=80",
+    imageAlt: "South of Fifth oceanfront condominium towers at the southern tip of Miami Beach",
     description: [
       "South of Fifth, known as SoFi, is the crown jewel of Miami Beach. Located at the southernmost tip of the island, this intimate neighborhood is home to some of the most prestigious residences in all of South Florida. With the Atlantic Ocean on one side and Biscayne Bay on the other, SoFi offers a rare combination of urban sophistication and waterfront living.",
       "The neighborhood is defined by its world-class condominium towers, including Apogee, Continuum, and Murano Grande, which offer panoramic views and resort-style amenities. Tree-lined streets, art deco architecture, and a walkable layout give SoFi a village-like feel that sets it apart from the rest of Miami Beach.",
@@ -59,12 +62,13 @@ export const neighborhoods: Neighborhood[] = [
     ]
   },
   {
-    name: "Sunset Harbor",
+    name: "Sunset Harbour",
     slug: "sunset-harbor",
     tagline: "Miami Beach's Best-Kept Secret",
     heroImage: "https://images.unsplash.com/photo-1704236600122-56a1401023d3?w=1920&q=80",
+    imageAlt: "Boats and bayfront buildings along the water in Sunset Harbour, Miami Beach",
     description: [
-      "Sunset Harbour is a small but vibrant neighborhood tucked between the Intracoastal Waterway and Dade Boulevard on the west side of Miami Beach. Once an overlooked industrial area, it has transformed into one of the most desirable pockets on the island, known for its boutique fitness studios, chef-driven restaurants, and laid-back waterfront lifestyle.",
+      "Sunset Harbour (often spelled Sunset Harbor) is a small but vibrant neighborhood tucked between the Intracoastal Waterway and Dade Boulevard on the west side of Miami Beach. Once an overlooked industrial area, it has transformed into one of the most desirable pockets on the island, known for its boutique fitness studios, chef-driven restaurants, and laid-back waterfront lifestyle.",
       "The neighborhood's appeal lies in its authenticity. Unlike the flashier parts of Miami Beach, Sunset Harbour attracts a community of health-conscious professionals, young families, and creatives who value quality of life over spectacle. The streets are walkable, the restaurants are locally owned, and the energy is distinctly neighborhood-oriented.",
       "Residential options range from renovated mid-century condos to newer luxury developments. Many units offer bay views and direct access to the neighborhood's dining and fitness scene, making Sunset Harbour one of Miami Beach's most livable addresses."
     ],
@@ -101,6 +105,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "brickell",
     tagline: "Miami's Financial District Meets Urban Living",
     heroImage: "https://images.unsplash.com/photo-1704080864842-2577d94ebb1c?w=1920&q=80",
+    imageAlt: "Brickell high-rise condominium skyline in Miami",
     description: [
       "Brickell is Miami's most dynamic urban neighborhood. Known as the financial district of South Florida, it has evolved far beyond its corporate roots into a vibrant residential community with world-class dining, nightlife, and retail. The skyline is defined by sleek glass towers that house some of the city's most sought-after condominiums.",
       "Brickell City Centre, a $1.05 billion mixed-use development, serves as the neighborhood's central hub, offering luxury shopping, restaurants, and a climate-controlled open-air design. The surrounding streets are lined with cafes, cocktail bars, and international restaurants that cater to the neighborhood's cosmopolitan population.",
@@ -147,6 +152,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "coconut-grove",
     tagline: "Miami's Original Neighborhood",
     heroImage: "https://images.unsplash.com/photo-1595111571848-fdf33cfb6cff?w=1920&q=80",
+    imageAlt: "Lush tropical greenery and bayfront homes in Coconut Grove, Miami",
     description: [
       "Coconut Grove is Miami's most historic neighborhood. The Grove has waterfront charm and a residential community feel, making it family friendly while still youthful.",
       "The neighborhood centers around CocoWalk, a recently reimagined area with boutique shopping, dining, and bars. Beyond the village center, Coconut Grove is defined by its tree-lined streets, historic estates, and proximity to Biscayne Bay.",
@@ -191,6 +197,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "fisher-island",
     tagline: "America's Wealthiest Zip Code",
     heroImage: "https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920&q=80",
+    imageAlt: "Continuum South Beach towers on the oceanfront",
     description: [
       "Fisher Island is a 216-acre private island located just south of Miami Beach, accessible only by ferry. With a population of fewer than 1000 residents, it is one of the most exclusive residential communities in the world, consistently ranked among America's wealthiest zip codes. Most residents use Fisher Island as their second or third home, drawn by the unmatched privacy it offers.",
       "The island features a private beach club, a world-class golf course, a deep-water marina, multiple restaurants, a spa, and tennis courts. Every amenity is designed for residents only, creating an environment of privacy and exclusivity.",
@@ -229,6 +236,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "coral-gables",
     tagline: "The City Beautiful",
     heroImage: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80",
+    imageAlt: "Mediterranean-style luxury home in Coral Gables",
     description: [
       "Coral Gables is one of South Florida's most distinguished communities. It remains one of the most desired residential addresses in Miami due to its all-encompassing neighborhood feel. It's family friendly with nearby parks, recreation, walkable streets, and shops along with the restaurants on Miracle Mile and the historic Biltmore Hotel for golf, tennis, and events.",
       "The neighborhood is anchored by the iconic Biltmore Hotel, a National Historic Landmark. Miracle Mile is the city's main commercial corridor, featuring boutique shopping, fine dining, and art galleries that reflect the community's cultivated character.",
@@ -273,6 +281,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "palm-beach",
     tagline: "The Island of Timeless Elegance",
     heroImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80",
+    imageAlt: "Turquoise Atlantic water and a quiet white-sand beach",
     description: [
       "Palm Beach is one of the most storied addresses in America. This barrier island, stretching along the Atlantic just north of Miami, has been a winter retreat for the country's most prominent families for more than a century, and today it is increasingly a year-round home for buyers relocating to South Florida.",
       "The island is defined by grand oceanfront estates, Mediterranean Revival architecture by Addison Mizner, manicured hedges and quiet, palm-lined streets. Worth Avenue, with its courtyards and vias, remains one of the world's great luxury shopping destinations, while The Breakers anchors the island's social life.",
@@ -315,6 +324,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "west-palm-beach",
     tagline: "South Florida's Waterfront City on the Rise",
     heroImage: "https://images.unsplash.com/photo-1589083130544-0d6a2926e519?w=1920&q=80",
+    imageAlt: "Continuum South Beach towers on the oceanfront",
     description: [
       "West Palm Beach sits directly across the Lake Worth Lagoon from Palm Beach and has become one of the most dynamic cities in South Florida. A wave of financial firms, new residents and new development has transformed its downtown into a true live, work and play destination.",
       "The waterfront along Flagler Drive offers sweeping views across to Palm Beach, while Clematis Street and Rosemary Square bring dining, nightlife and shopping into a walkable downtown core. The Norton Museum of Art and the Kravis Center give the city a cultural depth to match its growth.",

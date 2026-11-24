@@ -148,7 +148,7 @@ export const comparisons: Comparison[] = [
     sections: [
       {
         heading: "Lifestyle",
-        body: "Brickell feels like a big-city downtown, with offices, restaurants, rooftop bars and Brickell City Centre within a few blocks. Miami Beach, and especially South of Fifth and Sunset Harbor, has a more relaxed, wellness-oriented rhythm built around the beach, parks and the water.",
+        body: "Brickell feels like a big-city downtown, with offices, restaurants, rooftop bars and Brickell City Centre within a few blocks. Miami Beach, and especially South of Fifth and Sunset Harbour, has a more relaxed, wellness-oriented rhythm built around the beach, parks and the water.",
       },
       {
         heading: "Homes",
@@ -202,13 +202,13 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "south-of-fifth-vs-sunset-harbor",
-    title: "South of Fifth vs Sunset Harbor: Miami Beach Neighborhoods Compared",
+    title: "South of Fifth vs Sunset Harbour: Miami Beach Neighborhoods Compared",
     a: "South of Fifth",
-    b: "Sunset Harbor",
+    b: "Sunset Harbour",
     metaDescription:
-      "South of Fifth vs Sunset Harbor in Miami Beach compared: lifestyle, condos, homes, dining and investment, from SoFi resident Matt Edwards.",
+      "South of Fifth vs Sunset Harbour in Miami Beach compared: lifestyle, condos, homes, dining and investment, from SoFi resident Matt Edwards.",
     intro:
-      "South of Fifth and Sunset Harbor are two of the most desirable neighborhoods in Miami Beach. Both are walkable and residential, but one is defined by oceanfront towers and the other by a bayside village of cafés, fitness studios and townhomes.",
+      "South of Fifth and Sunset Harbour are two of the most desirable neighborhoods in Miami Beach. Both are walkable and residential, but one is defined by oceanfront towers and the other by a bayside village of cafés, fitness studios and townhomes.",
     table: [
       { label: "Location", a: "Southern tip of Miami Beach", b: "Bayside, near the Venetian Causeway" },
       { label: "Typical homes", a: "Oceanfront and bayfront luxury condo towers", b: "Boutique condos, townhomes and nearby waterfront homes" },
@@ -219,24 +219,65 @@ export const comparisons: Comparison[] = [
     sections: [
       {
         heading: "Lifestyle",
-        body: "South of Fifth centers on the beach, South Pointe Park and Pier, and classic restaurants like Joe's Stone Crab. Sunset Harbor is a compact, walkable district known for health-focused restaurants, cafés and boutique fitness studios that attract a younger, active crowd.",
+        body: "South of Fifth centers on the beach, South Pointe Park and Pier, and classic restaurants like Joe's Stone Crab. Sunset Harbour is a compact, walkable district known for health-focused restaurants, cafés and boutique fitness studios that attract a younger, active crowd.",
       },
       {
         heading: "Homes",
-        body: "South of Fifth is home to signature towers such as Continuum, Apogee, Murano Grande and The Setai. Sunset Harbor offers boutique condos and townhomes, with single-family homes on the nearby islands and waterways.",
+        body: "South of Fifth is home to signature towers such as Continuum, Apogee, Murano Grande and The Setai. Sunset Harbour offers boutique condos and townhomes, with single-family homes on the nearby islands and waterways.",
       },
       {
         heading: "Investment perspective",
-        body: "South of Fifth's limited inventory and prime location have historically supported strong values. Sunset Harbor's popularity as a lifestyle destination continues to drive demand for its smaller supply of residences.",
+        body: "South of Fifth's limited inventory and prime location have historically supported strong values. Sunset Harbour's popularity as a lifestyle destination continues to drive demand for its smaller supply of residences.",
       },
     ],
     chooseA: "You want an oceanfront condo with full-service amenities in Miami Beach's most exclusive enclave.",
     chooseB: "You want a neighborhood-village feel with cafés, fitness and a bayside setting.",
     mattsTake:
-      "I live in South of Fifth and spend plenty of time in Sunset Harbor. They're only a few minutes apart, but they feel completely different. Let me walk you through both.",
+      "I live in South of Fifth and spend plenty of time in Sunset Harbour. They're only a few minutes apart, but they feel completely different. Let me walk you through both.",
+  },
+  {
+    slug: "fisher-island-vs-south-of-fifth",
+    title: "Fisher Island vs South of Fifth: Which Is Right for You?",
+    a: "Fisher Island",
+    b: "South of Fifth",
+    metaDescription:
+      "Fisher Island vs South of Fifth compared: privacy, access, lifestyle, homes and amenities, from South of Fifth resident Matt Edwards.",
+    intro:
+      "Fisher Island and South of Fifth sit across Government Cut from each other and attract many of the same buyers. One is a private island reached by ferry; the other is a walkable neighborhood at the southern tip of Miami Beach. Here is how they compare.",
+    table: [
+      { label: "Access", a: "Private ferry or boat only, no bridge", b: "Drive, walk or bike, connected to the rest of Miami Beach" },
+      { label: "Privacy", a: "Gated, residents and guests only", b: "Public streets with secure, full-service buildings" },
+      { label: "Lifestyle", a: "Club-centered island life", b: "Walkable village with beach, park and restaurants" },
+      { label: "Typical homes", a: "Condominiums and villas within the island community", b: "Oceanfront and bayfront condo towers, boutique buildings" },
+      { label: "Amenities", a: "Private beach club, golf, marina, tennis and spa for residents", b: "Building amenities plus South Pointe Park and public beach" },
+      { label: "Best for", a: "Buyers who prioritize privacy and security above all", b: "Buyers who want privacy at home and walkability outside" },
+    ],
+    sections: [
+      {
+        heading: "Lifestyle",
+        body: "Fisher Island life revolves around the island's private club, beach and marina, with a small, close-knit community. South of Fifth offers a walkable lifestyle with South Pointe Park, the beach, cafés and some of Miami Beach's best restaurants a few steps from home.",
+      },
+      {
+        heading: "Access and convenience",
+        body: "Reaching Fisher Island means taking the ferry or your own boat, which adds a layer of privacy but also planning to daily errands. South of Fifth residents can walk, bike or drive anywhere in Miami Beach and reach downtown Miami quickly over the MacArthur Causeway.",
+      },
+      {
+        heading: "Homes",
+        body: "Fisher Island offers condominiums and villas within a single private community. South of Fifth offers a wider choice of buildings, from large oceanfront towers to boutique bayfront residences, at a broad range of price points.",
+      },
+    ],
+    chooseA: "Privacy, security and a private-club lifestyle are your top priorities and you don't mind the ferry.",
+    chooseB: "You want a secure, full-service building but also the freedom to walk to the beach, park and restaurants.",
+    mattsTake:
+      "I look across at Fisher Island from South of Fifth every day. Both are exceptional; the question is whether you want an island that keeps the world out or a neighborhood that puts it at your door. I'm happy to show you both.",
   },
 ];
 
 export function getComparisonBySlug(slug: string): Comparison | undefined {
   return comparisons.find((c) => c.slug === slug);
+}
+
+/** Comparison articles that involve a given neighborhood (matched by name). */
+export function getComparisonsForNeighborhood(name: string): Comparison[] {
+  return comparisons.filter((c) => c.a === name || c.b === name);
 }

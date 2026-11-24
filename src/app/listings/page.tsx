@@ -1,13 +1,15 @@
-import { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import ListingCard from "@/components/ListingCard";
 import { getAllListings } from "@/data/listings";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Listings | Matt Edwards Luxury Real Estate Miami",
-  description: "Browse Matt Edwards' portfolio of luxury properties in Miami. From waterfront estates to penthouses, find your dream home.",
-};
+export const metadata = pageMetadata({
+  title: "Luxury Listings in Miami Beach | Matt Edwards",
+  description: "Luxury condos and waterfront homes for sale in Miami Beach and South of Fifth, represented by Matt Edwards of ONE Sotheby's International Realty.",
+  path: "/listings",
+  noindex: getAllListings().length === 0,
+});
 
 export default function ListingsPage() {
   const listings = getAllListings();
