@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import SocialIcons, { Icon } from "@/components/SocialIcons";
-import { site } from "@/lib/site";
+import { site, phoneHref } from "@/lib/site";
 
 type NavItem = {
   label: string;
@@ -20,7 +20,7 @@ const navItems: NavItem[] = [
     href: "/#communities",
     children: [
       { label: "South of Fifth", href: "/neighborhoods/south-of-fifth" },
-      { label: "Sunset Harbor", href: "/neighborhoods/sunset-harbor" },
+      { label: "Sunset Harbour", href: "/neighborhoods/sunset-harbor" },
       { label: "Fisher Island", href: "/neighborhoods/fisher-island" },
       { label: "Brickell", href: "/neighborhoods/brickell" },
       { label: "Coconut Grove", href: "/neighborhoods/coconut-grove" },
@@ -29,9 +29,10 @@ const navItems: NavItem[] = [
       { label: "West Palm Beach", href: "/neighborhoods/west-palm-beach" },
     ],
   },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Sell", href: "/sell" },
+  { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -58,20 +59,20 @@ export default function Header() {
       <nav className="max-w-[1600px] mx-auto px-5 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Wordmark + brokerage lockup */}
-          <Link href="/" className="flex items-center gap-4 lg:gap-5 min-w-0">
+          <Link href="/" aria-label="Matt Edwards, ONE Sotheby's International Realty, home" className="flex items-center gap-3 sm:gap-4 lg:gap-5 min-w-0">
             <span
-              className="text-white text-[1.7rem] sm:text-[2.1rem] leading-none whitespace-nowrap"
+              className="text-white text-[1.35rem] sm:text-[2.1rem] leading-none whitespace-nowrap"
               style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
             >
               Matt Edwards
             </span>
-            <span className="hidden sm:block w-px h-12 bg-white/80" aria-hidden="true" />
+            <span className="block w-px h-8 sm:h-12 bg-white/80" aria-hidden="true" />
             <Image
               src="/images/one-sothebys.png"
               alt={site.brokerage}
               width={1013}
               height={223}
-              className="hidden sm:block h-8 lg:h-10 w-auto brightness-0 invert"
+              className="block h-[22px] sm:h-8 lg:h-10 w-auto brightness-0 invert"
               priority
             />
           </Link>
@@ -112,7 +113,7 @@ export default function Header() {
             <span className="w-px h-6 bg-white/20" aria-hidden="true" />
             <SocialIcons iconClassName="w-3.5 h-3.5" className="gap-4" />
             <a
-              href={site.phoneHref}
+              href={phoneHref}
               className="text-[0.7rem] tracking-[0.15em] text-white hover:text-[var(--navy-light)] transition-colors whitespace-nowrap"
             >
               {site.phone}
@@ -121,7 +122,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <div className="flex xl:hidden items-center gap-4">
-            <a href={site.phoneHref} aria-label="Call Matt" className="text-white p-2">
+            <a href={phoneHref} aria-label="Call Matt" className="text-white p-2">
               <Icon name="phone" className="w-5 h-5" />
             </a>
             <button

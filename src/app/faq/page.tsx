@@ -1,84 +1,38 @@
 import Link from "next/link";
-import type { Metadata } from "next";
 import LeadForm from "@/components/LeadForm";
 import { Icon } from "@/components/SocialIcons";
 import { faqCategories, allFaqs } from "@/data/faqs";
 import { comparisons } from "@/data/comparisons";
-import { site } from "@/lib/site";
+import { site, phoneHref } from "@/lib/site";
+import { pageMetadata } from "@/lib/metadata";
+import { breadcrumbSchema } from "@/lib/schema";
+import JsonLd from "@/components/JsonLd";
 
 const serif = { fontFamily: "var(--font-heading)" };
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Miami & Palm Beach Real Estate FAQ | Matt Edwards",
   description:
-    "Answers to the most-asked questions about buying and selling luxury real estate in Miami, Miami Beach, Palm Beach and West Palm Beach: closing costs, property taxes, homestead, condo laws, insurance, international buyers and more.",
-  keywords: [
-    "Miami real estate FAQ",
-    "buying a home in Miami",
-    "selling a home in Miami",
-    "Florida closing costs",
-    "Miami property taxes",
-    "Florida homestead exemption",
-    "Florida condo law",
-    "Palm Beach real estate",
-    "Miami luxury real estate agent",
-  ],
-  openGraph: {
-    title: "Miami & Palm Beach Real Estate FAQ",
-    description: "Straight answers to the questions buyers and sellers ask most, from Miami luxury advisor Matt Edwards.",
-    type: "website",
-  },
-  alternates: {
-    canonical: "/faq",
-  },
-};
+    "Answers to top questions on buying and selling luxury homes in Miami Beach and Palm Beach: closing costs, property taxes, homestead, condo law and more.",
+  path: "/faq",
+});
 
-// Structured data so Google and AI assistants can read and cite each answer.
+// FAQPage structured data, built from the same data that renders the questions below.
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      mainEntity: allFaqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    },
-    {
-      "@type": "RealEstateAgent",
-      name: site.name,
-      telephone: "+1-214-886-0363",
-      email: site.email,
-      parentOrganization: { "@type": "Organization", name: site.brokerage },
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: site.addressLine1,
-        addressLocality: "Miami Beach",
-        addressRegion: "FL",
-        postalCode: "33139",
-        addressCountry: "US",
-      },
-      areaServed: [
-        "Miami",
-        "Miami Beach",
-        "South of Fifth",
-        "Sunset Harbor",
-        "Fisher Island",
-        "Brickell",
-        "Coconut Grove",
-        "Coral Gables",
-        "Palm Beach",
-        "West Palm Beach",
-      ],
-    },
-  ],
+  "@type": "FAQPage",
+  mainEntity: allFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 export default function FaqPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={jsonLd} />
+      <JsonLd data={breadcrumbSchema([["Real Estate FAQ", "/faq"]])} />
 
       {/* ---------- Hero ---------- */}
       <section
@@ -183,7 +137,7 @@ export default function FaqPage() {
               valuation or a private list of properties matched to your goals.
             </p>
             <a
-              href={site.phoneHref}
+              href={phoneHref}
               className="mt-8 inline-flex items-center gap-4 hover:text-[var(--navy-light)] transition-colors"
             >
               <Icon name="phone" className="w-5 h-5" />
@@ -194,7 +148,7 @@ export default function FaqPage() {
             <LeadForm
               eyebrow="Ask a Question"
               title="Get a Personal Answer"
-              subtitle="Share a few details and Matt will follow up personally within 24 hours."
+              subtitle="Share a few details and Matt will follow up personally."
               buttonLabel="Send My Question"
               source="FAQ Page"
             />

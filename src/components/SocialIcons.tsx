@@ -1,4 +1,4 @@
-import { site } from "@/lib/site";
+import { site, socialLinks, phoneHref } from "@/lib/site";
 
 const paths = {
   instagram:
@@ -24,17 +24,22 @@ export function Icon({ name, className = "w-4 h-4" }: { name: IconName; classNam
 }
 
 export default function SocialIcons({ className = "", iconClassName = "w-4 h-4" }: { className?: string; iconClassName?: string }) {
-  const links: { name: IconName; href: string; label: string }[] = [
-    { name: "instagram", href: site.social.instagram, label: "Instagram" },
-    { name: "youtube", href: site.social.youtube, label: "YouTube" },
-    { name: "linkedin", href: site.social.linkedin, label: "LinkedIn" },
+  const labels = { instagram: "Instagram", youtube: "YouTube", linkedin: "LinkedIn" } as const;
+  // Only real profile links are shown; empty or "#" entries in site.ts are skipped.
+  const links: { name: IconName; href: string; label: string; external?: boolean }[] = [
+    ...socialLinks.map((s) => ({ name: s.name, href: s.href, label: labels[s.name], external: true })),
     { name: "email", href: `mailto:${site.email}`, label: "Email" },
-    { name: "phone", href: site.phoneHref, label: "Call" },
+    { name: "phone", href: phoneHref, label: "Call" },
   ];
   return (
     <div className={`flex items-center gap-5 ${className}`}>
       {links.map((l) => (
-        <a key={l.name} href={l.href} aria-label={l.label} className="text-gray-400 hover:text-white transition-colors">
+        <a
+          key={l.name}
+          href={l.href}
+          aria-label={l.label}
+          {...(l.external ? { target: "_blank", rel: "noopener me" } : {})}
+          className="text-gray-400 hover:text-white transition-colors">
           <Icon name={l.name} className={iconClassName} />
         </a>
       ))}

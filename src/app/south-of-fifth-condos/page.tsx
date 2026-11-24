@@ -1,55 +1,48 @@
 import Image from "next/image";
-import type { Metadata } from "next";
+import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
+import ListingsEmbed from "@/components/ListingsEmbed";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata } from "@/lib/metadata";
+import { breadcrumbSchema } from "@/lib/schema";
+import { site, phoneHref } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Luxury Condos in South of Fifth, Miami Beach | Matt Edwards",
   description:
-    "Buy a luxury condo in South of Fifth (SoFi), Miami Beach's most exclusive oceanfront enclave. Continuum, Apogee, Murano Grande, The Setai & more. Work with Matt Edwards, a SoFi resident and specialist.",
-  keywords: [
-    "South of Fifth condos",
-    "SoFi Miami Beach",
-    "Miami Beach luxury condos",
-    "Continuum condos for sale",
-    "Apogee South Beach",
-    "Murano Grande",
-    "The Setai residences",
-    "Miami Beach real estate agent",
-  ],
-  openGraph: {
-    title: "Luxury Condos in South of Fifth, Miami Beach",
-    description:
-      "Miami Beach's most exclusive oceanfront enclave. Get a private list of available and off-market South of Fifth condos.",
-    type: "website",
-  },
-  alternates: {
-    canonical: "/south-of-fifth-condos",
-  },
-};
+    "Luxury condos in South of Fifth (SoFi), Miami Beach: Continuum, Apogee, Murano Grande, The Setai and more, with SoFi resident Matt Edwards of ONE Sotheby's.",
+  path: "/south-of-fifth-condos",
+});
 
 const signatureBuildings = [
   {
     name: "Continuum",
-    detail: "Twin oceanfront towers on the largest private beachfront in SoFi, with 12 acres of resort amenities.",
+    slug: "continuum",
+    detail: "Twin oceanfront towers set on expansive private grounds.",
   },
   {
     name: "Apogee",
+    slug: "apogee",
     detail: "Just 67 residences with private two-car garages on each floor — the definition of boutique luxury.",
   },
   {
     name: "Murano Grande",
+    slug: "murano-grande",
     detail: "Bayfront living with floor-to-ceiling glass, a private marina, and sweeping Government Cut views.",
   },
   {
     name: "The Setai Residences",
+    slug: "the-setai-residences",
     detail: "Five-star hotel service, Art Deco heritage, and one of South Beach's most coveted addresses.",
   },
   {
     name: "Icon South Beach",
+    slug: "icon-south-beach",
     detail: "Philippe Starck design on the bay with a dramatic pool deck and full-service amenities.",
   },
   {
     name: "Portofino & Murano at Portofino",
+    slug: "portofino",
     detail: "Established bayfront towers anchoring the western edge of the neighborhood, marina access included.",
   },
 ];
@@ -68,7 +61,7 @@ const valueProps = [
   {
     title: "Limited inventory, lasting value",
     description:
-      "High barriers to entry and a fixed footprint mean SoFi has consistently outperformed the rest of Miami Beach. These are trophy assets that hold their value.",
+      "High barriers to entry and a fixed footprint mean SoFi's limited inventory has helped values hold up well over time. These are trophy assets.",
   },
   {
     title: "Resort amenities at home",
@@ -122,12 +115,13 @@ const faqs = [
 export default function SouthOfFifthCondosPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([["South of Fifth Condos", "/south-of-fifth-condos"]])} />
       {/* Hero + Lead Form */}
       <section className="relative min-h-screen flex items-center pt-28 pb-16">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://plus.unsplash.com/premium_photo-1697730215093-baeae8060bfe?w=1920&q=80"
-            alt="South of Fifth, Miami Beach oceanfront condos"
+            alt="South of Fifth oceanfront condominium towers, Miami Beach"
             fill
             className="object-cover"
             priority
@@ -164,8 +158,8 @@ export default function SouthOfFifthCondosPage() {
                 <a href="#inquire" className="bg-white text-[var(--charcoal)] border border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-10 py-4 font-medium tracking-[0.05em] uppercase text-sm transition-all duration-300">
                   See Available Condos
                 </a>
-                <a href="tel:+12148860363" className="btn-secondary bg-transparent text-white border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-8 py-4 text-sm">
-                  Call (214) 886-0363
+                <a href={phoneHref} className="btn-secondary bg-transparent text-white border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white text-center px-8 py-4 text-sm">
+                  Call {site.phone}
                 </a>
               </div>
             </div>
@@ -185,8 +179,8 @@ export default function SouthOfFifthCondosPage() {
             {[
               { stat: "SoFi", label: "Resident & Specialist" },
               { stat: "$1M–$50M+", label: "Condo Price Range" },
-              { stat: "10+", label: "Signature Towers" },
-              { stat: "24 hrs", label: "Personal Response" },
+              { stat: String(signatureBuildings.length), label: "Signature Buildings" },
+              { stat: "1:1", label: "Personal Response" },
             ].map((item) => (
               <div key={item.label}>
                 <p className="text-2xl md:text-3xl font-semibold text-[var(--gold)] mb-1" style={{ fontFamily: 'var(--font-playfair)' }}>
@@ -261,14 +255,21 @@ export default function SouthOfFifthCondosPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {signatureBuildings.map((building) => (
-              <div key={building.name} className="border border-white/20 bg-white/5 backdrop-blur-sm p-8">
+              <Link
+                key={building.name}
+                href={`/buildings/${building.slug}`}
+                className="group block border border-white/20 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 transition-colors"
+              >
                 <h3 className="text-xl font-semibold mb-3 text-white" style={{ fontFamily: 'var(--font-playfair)' }}>
                   {building.name}
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
                   {building.detail}
                 </p>
-              </div>
+                <span className="mt-4 inline-block text-[0.62rem] tracking-[0.25em] uppercase text-gray-300 group-hover:text-white">
+                  View Building <span aria-hidden="true">→</span>
+                </span>
+              </Link>
             ))}
           </div>
 
@@ -311,15 +312,12 @@ export default function SouthOfFifthCondosPage() {
                   &ldquo;What I love about SoFi is the walkability, the wellness, and the community. You can grab a coffee at Pura Vida, walk your dog through South Pointe Park, have dinner at Smith and Wollensky, and never get in your car. For a city built around driving, that&apos;s unique.&rdquo;
                 </p>
                 <p>
-                  From an investment standpoint, SoFi has consistently outperformed the rest of Miami Beach. The limited inventory, prime location, and high barriers to entry mean properties here hold their value exceptionally well. If you&apos;re looking for a trophy asset in Miami, this is where to start.
+                  From an investment standpoint, SoFi's limited inventory has helped values hold up well over time. The limited inventory, prime location, and high barriers to entry mean properties here hold their value exceptionally well. If you&apos;re looking for a trophy asset in Miami, this is where to start.
                 </p>
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a href="#inquire" className="btn-primary text-center">
                   Start Your Search
-                </a>
-                <a href="tel:+12148860363" className="btn-secondary text-center">
-                  Call (214) 886-0363
                 </a>
               </div>
             </div>
@@ -357,6 +355,8 @@ export default function SouthOfFifthCondosPage() {
           </div>
         </div>
       </section>
+
+      <ListingsEmbed area="South of Fifth" title="South of Fifth Condos for Sale" />
 
       {/* FAQ */}
       <section className="py-24 bg-[var(--cream)]">
@@ -417,20 +417,17 @@ export default function SouthOfFifthCondosPage() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 uppercase tracking-wide">Call or Text</p>
-                  <a href="tel:+12148860363" className="text-xl font-medium hover:text-[var(--gold)] transition-colors">
-                    (214) 886-0363
+                  <a href={phoneHref} className="text-xl font-medium hover:text-[var(--gold)] transition-colors">
+                    {site.phone}
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="w-full max-w-md lg:justify-self-end">
-              <LeadForm
-                eyebrow="Get Started"
-                title="Request Your Curated Condo List"
-                subtitle="Share a few details and Matt will follow up personally within 24 hours."
-                buttonLabel="Request My List"
-              />
+            <div className="lg:justify-self-end">
+              <a href="#inquire" className="bg-white text-[var(--charcoal)] border border-white hover:bg-[var(--gold)] hover:border-[var(--gold)] hover:text-white inline-block px-10 py-4 font-medium tracking-[0.05em] uppercase text-sm transition-all duration-300">
+                Request Your Curated Condo List
+              </a>
             </div>
           </div>
         </div>
